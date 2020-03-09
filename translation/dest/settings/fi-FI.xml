@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="settings">Asetukset</string>
+  <string name="closeAccount">Sulje tili</string>
+  <string name="changedMindDoNotCloseAccount">Muutin mieleni, älä sulje tiliäni</string>
+  <string name="thisAccountIsClosed">Tämä tili on suljettu.</string>
+</resources>

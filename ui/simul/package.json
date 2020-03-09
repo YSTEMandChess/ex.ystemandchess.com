@@ -1,0 +1,22 @@
+{
+  "name": "simul",
+  "version": "2.0.0",
+  "private": true,
+  "description": "lichess.org simul",
+  "main": "src/main.js",
+  "keywords": [
+    "chess",
+    "lichess",
+    "simul"
+  ],
+  "author": "Thibault Duplessis",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "@build/jsProject": "2.0.0"
+  },
+  "dependencies": {
+    "chat": "2.0.0",
+    "game": "2.0.0",
+    "mithril": "github:ornicar/mithril.js#lila-1"
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="settings">Ayarlar</string>
+  <string name="closeAccount">Hesabı bağla</string>
+  <string name="changedMindDoNotCloseAccount">Fikrimi dəyişdirdim, hesabımı bağlamaq istəmirəm</string>
+  <string name="thisAccountIsClosed">Hesab bağlanıldı.</string>
+</resources>

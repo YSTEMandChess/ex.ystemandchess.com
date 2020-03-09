@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="team">Squadra</string>
+  <string name="teams">Gruppi</string>
+  <plurals name="nbMembers">
+    <item quantity="one">%s membro</item>
+    <item quantity="other">%s membri</item>
+  </plurals>
+  <string name="allTeams">Tutti i gruppi</string>
+  <string name="newTeam">Nuovo gruppo</string>
+  <string name="myTeams">I miei gruppi</string>
+  <string name="noTeamFound">Nessun gruppo trovato</string>
+  <string name="joinTeam">Unisciti al gruppo</string>
+  <string name="quitTeam">Abbandona il gruppo</string>
+  <string name="anyoneCanJoin">Aperto a tutti</string>
+  <string name="aConfirmationIsRequiredToJoin">È richiesta una conferma per unirsi</string>
+  <string name="joiningPolicy">Regole di adesione</string>
+  <string name="teamLeader">Capogruppo</string>
+  <string name="teamBestPlayers">Migliori giocatori</string>
+  <string name="teamRecentMembers">Membri più recenti</string>
+  <string name="kickSomeone">Espelli qualcuno dalla squadra</string>
+  <string name="whoToKick">Chi vuoi espellere dalla squadra?</string>
+  <string name="appointOwner">Nomina un altro proprietario del team</string>
+  <string name="changeOwner">Chi vuoi rendere proprietario di questa squadra?</string>
+  <plurals name="xJoinRequests">
+    <item quantity="one">%s richiesta di adesione</item>
+    <item quantity="other">%s richieste di adesione</item>
+  </plurals>
+  <string name="willBeReviewed">La tua richiesta di adesione verrà esaminata dal leader del team.</string>
+  <string name="beingReviewed">La tua richiesta di adesione è in fase di revisione da parte del leader del team.</string>
+  <string name="teamBattle">Battaglia di squadra</string>
+</resources>

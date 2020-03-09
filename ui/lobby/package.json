@@ -1,0 +1,25 @@
+{
+  "name": "lobby",
+  "version": "2.0.0",
+  "private": true,
+  "description": "lichess.org lobby",
+  "main": "src/main.js",
+  "keywords": [
+    "chess",
+    "lichess",
+    "lobby",
+    "seek"
+  ],
+  "author": "Thibault Duplessis",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "@build/tsProject": "2.0.0",
+    "@types/jquery": "^2.0",
+    "@types/lichess": "2.0.0"
+  },
+  "dependencies": {
+    "chessground": "^7.6",
+    "common": "2.0.0",
+    "snabbdom": "ornicar/snabbdom#0.7.1-lichess"
+  }
+}

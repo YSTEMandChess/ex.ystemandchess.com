@@ -1,0 +1,10 @@
+import { Square, Piece } from './types';
+import { SquareSet } from './squareSet';
+import { Board } from './board';
+import { Position } from './chess';
+export declare function squareSet(squares: SquareSet): string;
+export declare function piece(piece: Piece): string;
+export declare function board(board: Board): string;
+export declare function square(sq: Square): string;
+export declare function dests(dests: Map<Square, SquareSet>): string;
+export declare function perft(pos: Position, depth: number, log?: boolean): number;

@@ -1,0 +1,24 @@
+{
+  "name": "editor",
+  "version": "2.0.0",
+  "private": true,
+  "description": "lichess.org board editor",
+  "keywords": [
+    "chess",
+    "lichess.org",
+    "board",
+    "editor"
+  ],
+  "author": "Thibault Duplessis",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "@build/tsProject": "2.0.0",
+    "@build/cssProject": "2.0.0"
+  },
+  "dependencies": {
+    "chessground": "^7.6",
+    "chessops": "^0.3.3",
+    "snabbdom": "ornicar/snabbdom#0.7.1-lichess",
+    "common": "2.0.0"
+  }
+}

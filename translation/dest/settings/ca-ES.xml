@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="settings">Configuració</string>
+  <string name="closeAccount">Tancar el compte</string>
+  <string name="changedMindDoNotCloseAccount">He canviat d\'opinió, no tanqueu el meu compte</string>
+  <string name="thisAccountIsClosed">Aquest compte està tancat.</string>
+</resources>

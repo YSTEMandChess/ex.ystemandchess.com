@@ -1,0 +1,599 @@
+2020-02-18 20:32:44,944 INFO  boot lila 3 / java 11.0.6, memory: 2048MB
+2020-02-18 20:32:48,224 INFO  reactivemongo.api.Driver [Supervisor-1] Creating connection: main
+2020-02-18 20:32:48,393 INFO  r.core.actors.MongoDBSystem [Supervisor-1/main] Starting the MongoDBSystem
+2020-02-18 20:32:48,423 INFO  reactivemongo.core.netty.Pack Instantiated reactivemongo.core.netty.Pack
+2020-02-18 20:32:49,325 INFO  db.main MongoDB connected to lichess in 1135.00 ms
+2020-02-18 20:32:50,864 INFO  io.lettuce.core.EpollProvider Starting without optional epoll library
+2020-02-18 20:32:50,870 INFO  io.lettuce.core.KqueueProvider Starting without optional kqueue library
+2020-02-18 20:32:53,435 ERROR p.a.h.DefaultHttpErrorHandler 
+
+! @7epaefdga - Internal server error, for (GET) [/] ->
+ 
+play.api.UnexpectedException: Unexpected exception[RedisConnectionException: Unable to connect to 127.0.0.1:6379]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:211)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:142)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78)
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56)
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:234)
+	at io.lettuce.core.RedisClient.connectPubSub(RedisClient.java:366)
+	at lila.socket.RemoteSocket.makeSender(RemoteSocket.scala:113)
+	at lila.socket.RemoteSocket.<init>(RemoteSocket.scala:115)
+	at lila.socket.Env.<init>(Env.scala:19)
+	at lila.app.EnvBoot.socket$lzycompute(Env.scala:180)
+	at lila.app.EnvBoot.socket(Env.scala:180)
+	at lila.app.EnvBoot.user$lzycompute(Env.scala:177)
+	at lila.app.EnvBoot.user(Env.scala:177)
+	at lila.app.EnvBoot.security$lzycompute(Env.scala:178)
+	at lila.app.EnvBoot.security(Env.scala:178)
+	at lila.app.EnvBoot.api$lzycompute(Env.scala:237)
+	at lila.app.EnvBoot.api(Env.scala:237)
+	at lila.app.EnvBoot.$anonfun$env$1(Env.scala:241)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.app.EnvBoot.<init>(Env.scala:241)
+	at lila.app.LilaComponents.boot$lzycompute(AppLoader.scala:64)
+	at lila.app.LilaComponents.boot(AppLoader.scala:64)
+	at lila.app.LilaComponents.env$lzycompute(AppLoader.scala:65)
+	at lila.app.LilaComponents.env(AppLoader.scala:65)
+	at lila.app.LilaComponents.main$lzycompute(AppLoader.scala:94)
+	at lila.app.LilaComponents.main(AppLoader.scala:94)
+	at lila.app.LilaComponents.<init>(AppLoader.scala:131)
+	at lila.app.AppLoader.load(AppLoader.scala:13)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:190)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:22)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:182)
+	... 24 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-02-18 23:27:32,454 INFO  p.core.server.AkkaHttpServer Stopping Akka HTTP server...
+2020-02-18 23:27:32,471 INFO  p.core.server.AkkaHttpServer Terminating server binding for /0:0:0:0:0:0:0:0:9663
+2020-02-18 23:27:32,669 INFO  p.core.server.AkkaHttpServer Running provided shutdown stop hooks
+2020-02-18 23:27:32,672 WARN  akka.actor.CoordinatedShutdown Task [shutdown-application-dev-mode] failed in phase [service-stop]: Unexpected exception[RedisConnectionException: Unable to connect to 127.0.0.1:6379]
+2020-02-29 11:16:38,929 INFO  boot lila 3 / java 11.0.6, memory: 2048MB
+2020-02-29 11:16:42,217 INFO  reactivemongo.api.Driver [Supervisor-1] Creating connection: main
+2020-02-29 11:16:42,385 INFO  r.core.actors.MongoDBSystem [Supervisor-1/main] Starting the MongoDBSystem
+2020-02-29 11:16:42,416 INFO  reactivemongo.core.netty.Pack Instantiated reactivemongo.core.netty.Pack
+2020-02-29 11:16:43,207 INFO  db.main MongoDB connected to lichess in 1025.00 ms
+2020-02-29 11:16:44,762 INFO  io.lettuce.core.EpollProvider Starting without optional epoll library
+2020-02-29 11:16:44,765 INFO  io.lettuce.core.KqueueProvider Starting without optional kqueue library
+2020-02-29 11:16:47,303 ERROR p.a.h.DefaultHttpErrorHandler 
+
+! @7f29j8mfm - Internal server error, for (GET) [/] ->
+ 
+play.api.UnexpectedException: Unexpected exception[RedisConnectionException: Unable to connect to 127.0.0.1:6379]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:211)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:142)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78)
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56)
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:234)
+	at io.lettuce.core.RedisClient.connectPubSub(RedisClient.java:366)
+	at lila.socket.RemoteSocket.makeSender(RemoteSocket.scala:113)
+	at lila.socket.RemoteSocket.<init>(RemoteSocket.scala:115)
+	at lila.socket.Env.<init>(Env.scala:19)
+	at lila.app.EnvBoot.socket$lzycompute(Env.scala:180)
+	at lila.app.EnvBoot.socket(Env.scala:180)
+	at lila.app.EnvBoot.user$lzycompute(Env.scala:177)
+	at lila.app.EnvBoot.user(Env.scala:177)
+	at lila.app.EnvBoot.security$lzycompute(Env.scala:178)
+	at lila.app.EnvBoot.security(Env.scala:178)
+	at lila.app.EnvBoot.api$lzycompute(Env.scala:237)
+	at lila.app.EnvBoot.api(Env.scala:237)
+	at lila.app.EnvBoot.$anonfun$env$1(Env.scala:241)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.app.EnvBoot.<init>(Env.scala:241)
+	at lila.app.LilaComponents.boot$lzycompute(AppLoader.scala:64)
+	at lila.app.LilaComponents.boot(AppLoader.scala:64)
+	at lila.app.LilaComponents.env$lzycompute(AppLoader.scala:65)
+	at lila.app.LilaComponents.env(AppLoader.scala:65)
+	at lila.app.LilaComponents.main$lzycompute(AppLoader.scala:94)
+	at lila.app.LilaComponents.main(AppLoader.scala:94)
+	at lila.app.LilaComponents.<init>(AppLoader.scala:131)
+	at lila.app.AppLoader.load(AppLoader.scala:13)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:190)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:22)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:182)
+	... 24 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-02-29 11:16:47,303 ERROR p.a.h.DefaultHttpErrorHandler 
+
+! @7f29j8mfm - Internal server error, for (GET) [/] ->
+ 
+play.api.UnexpectedException: Unexpected exception[RedisConnectionException: Unable to connect to 127.0.0.1:6379]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:211)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:142)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78)
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56)
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:234)
+	at io.lettuce.core.RedisClient.connectPubSub(RedisClient.java:366)
+	at lila.socket.RemoteSocket.makeSender(RemoteSocket.scala:113)
+	at lila.socket.RemoteSocket.<init>(RemoteSocket.scala:115)
+	at lila.socket.Env.<init>(Env.scala:19)
+	at lila.app.EnvBoot.socket$lzycompute(Env.scala:180)
+	at lila.app.EnvBoot.socket(Env.scala:180)
+	at lila.app.EnvBoot.user$lzycompute(Env.scala:177)
+	at lila.app.EnvBoot.user(Env.scala:177)
+	at lila.app.EnvBoot.security$lzycompute(Env.scala:178)
+	at lila.app.EnvBoot.security(Env.scala:178)
+	at lila.app.EnvBoot.api$lzycompute(Env.scala:237)
+	at lila.app.EnvBoot.api(Env.scala:237)
+	at lila.app.EnvBoot.$anonfun$env$1(Env.scala:241)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.app.EnvBoot.<init>(Env.scala:241)
+	at lila.app.LilaComponents.boot$lzycompute(AppLoader.scala:64)
+	at lila.app.LilaComponents.boot(AppLoader.scala:64)
+	at lila.app.LilaComponents.env$lzycompute(AppLoader.scala:65)
+	at lila.app.LilaComponents.env(AppLoader.scala:65)
+	at lila.app.LilaComponents.main$lzycompute(AppLoader.scala:94)
+	at lila.app.LilaComponents.main(AppLoader.scala:94)
+	at lila.app.LilaComponents.<init>(AppLoader.scala:131)
+	at lila.app.AppLoader.load(AppLoader.scala:13)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:190)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:22)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:182)
+	... 24 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-02-29 11:19:47,215 INFO  p.a.i.l.c.CoordinatedShutdownSupport Starting synchronous coordinated shutdown with ServerStoppedReason reason and 35000 milliseconds timeout
+2020-02-29 11:19:47,220 INFO  p.core.server.AkkaHttpServer Stopping Akka HTTP server...
+2020-02-29 11:19:47,232 INFO  p.core.server.AkkaHttpServer Terminating server binding for /0:0:0:0:0:0:0:0:9663
+2020-02-29 11:19:47,245 INFO  p.core.server.AkkaHttpServer Running provided shutdown stop hooks
+2020-02-29 11:19:47,245 WARN  akka.actor.CoordinatedShutdown Task [shutdown-application-dev-mode] failed in phase [service-stop]: Unexpected exception[RedisConnectionException: Unable to connect to 127.0.0.1:6379]
+2020-02-29 11:41:59,259 INFO  boot lila 3 / java 11.0.6, memory: 2048MB
+2020-02-29 11:42:01,087 INFO  reactivemongo.api.Driver [Supervisor-1] Creating connection: main
+2020-02-29 11:42:01,321 INFO  r.core.actors.MongoDBSystem [Supervisor-1/main] Starting the MongoDBSystem
+2020-02-29 11:42:01,373 INFO  reactivemongo.core.netty.Pack Instantiated reactivemongo.core.netty.Pack
+2020-02-29 11:42:02,290 INFO  db.main MongoDB connected to lichess in 1225.00 ms
+2020-02-29 11:42:03,424 INFO  io.lettuce.core.EpollProvider Starting without optional epoll library
+2020-02-29 11:42:03,428 INFO  io.lettuce.core.KqueueProvider Starting without optional kqueue library
+2020-02-29 11:42:27,516 INFO  lobby <117ms> GetSris size=0
+2020-02-29 11:42:28,748 INFO  boot Loaded lila modules in 27960.00 ms
+2020-02-29 11:42:34,633 INFO  play.api.Play Application started (Dev) (no global state)
+2020-02-29 11:42:38,864 INFO  reactivemongo.api.Driver [Supervisor-1] Creating connection: puzzle
+2020-02-29 11:42:38,868 INFO  r.core.actors.MongoDBSystem [Supervisor-1/puzzle] Starting the MongoDBSystem
+2020-02-29 11:42:38,870 INFO  reactivemongo.core.netty.Pack Instantiated reactivemongo.core.netty.Pack
+2020-02-29 11:42:41,109 INFO  http 200 GET / Lobby.home 5227ms
+2020-02-29 11:43:25,253 INFO  p.core.server.AkkaHttpServer Stopping Akka HTTP server...
+2020-02-29 11:43:25,286 INFO  p.core.server.AkkaHttpServer Terminating server binding for /0:0:0:0:0:0:0:0:9663
+2020-02-29 11:43:25,307 INFO  shutdown before-service-unbind Telling lila-ws we're stopping
+2020-02-29 11:43:26,362 INFO  shutdown <1016ms> before-service-unbind Telling lila-ws we're stopping
+2020-02-29 11:43:26,362 INFO  shutdown service-unbind Stopping the socket redis pool
+2020-02-29 11:43:26,374 INFO  shutdown service-unbind Stopping the fishnet redis pool
+2020-02-29 11:43:26,375 INFO  shutdown service-unbind Stop round socket
+2020-02-29 11:43:26,393 ERROR socket lila-ws stop
+lila.base.LilaException$$anon$1: Future timed out after 1 second
+	at lila.base.LilaException$.apply(LilaException.scala:14)
+	at lila.base.PimpedFuture$.$anonfun$withTimeout$extension$1(PimpedFutures.scala:126)
+	at lila.base.PimpedFuture$.$anonfun$withTimeout$extension$2(PimpedFutures.scala:134)
+	at akka.pattern.FutureTimeoutSupport.liftedTree1$1(FutureTimeoutSupport.scala:31)
+	at akka.pattern.FutureTimeoutSupport.$anonfun$after$1(FutureTimeoutSupport.scala:31)
+	at akka.actor.Scheduler$$anon$7.run(Scheduler.scala:476)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:47)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:47)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+2020-02-29 11:43:26,400 INFO  shutdown 0 round ducts have stopped
+2020-02-29 11:43:26,418 INFO  shutdown <20ms> service-unbind Stop round socket
+2020-02-29 11:43:26,446 INFO  shutdown <70ms> service-unbind Stopping the fishnet redis pool
+2020-02-29 11:43:26,449 INFO  shutdown <75ms> service-unbind Stopping the socket redis pool
+2020-02-29 11:43:26,451 INFO  shutdown service-stop Closing mongodb driver
+2020-02-29 11:43:26,453 INFO  reactivemongo.api.Driver [Supervisor-1] Closing instance of ReactiveMongo driver
+2020-02-29 11:43:26,467 INFO  shutdown service-stop Freeing dev memory
+2020-02-29 11:43:26,483 INFO  shutdown <12ms> service-stop Freeing dev memory
+2020-02-29 11:43:26,553 INFO  r.core.actors.MongoDBSystem [Supervisor-1/puzzle] Stopping the MongoDBSystem
+2020-02-29 11:43:26,553 INFO  r.core.actors.MongoDBSystem [Supervisor-1/main] Stopping the MongoDBSystem
+2020-02-29 11:43:26,559 INFO  reactivemongo.api.Driver [Supervisor-1] Stopping the monitor...
+2020-02-29 11:43:26,569 WARN  akka.actor.CoordinatedShutdown Could not addJvmShutdownHook, due to: Shutdown in progress
+2020-02-29 11:43:26,620 ERROR akka.stream.Materializer [lila.tournament.CreatedOrganizer] Upstream failed.
+reactivemongo.core.actors.Exceptions$ClosedException: MongoError['This MongoConnection is closed (Supervisor-1/main)']
+Caused by: reactivemongo.core.actors.Exceptions$InternalState: 
+	at reactivemongo.Close$Release(<time:3045935791000>)
+	at reactivemongo.ConnectAll$IsMaster(13, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2804700ns, authenticated={}] }})(<time:3041339826500>)
+	at reactivemongo.IsMaster(true, 13, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3041336039700ns, authenticated={}] }})(<time:3041339338600>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3465000ns, authenticated={}] }})(<time:3041336897300>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3465000ns, authenticated={}] }})(<time:3041335765600>)
+	at reactivemongo.ConnectAll$IsMaster(11, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3465000ns, authenticated={}] }})(<time:3031341052600>)
+	at reactivemongo.IsMaster(true, 11, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3031336333900ns, authenticated={}] }})(<time:3031340516500>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3433600ns, authenticated={}] }})(<time:3031337428400>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3433600ns, authenticated={}] }})(<time:3031336019200>)
+	at reactivemongo.ConnectAll$IsMaster(9, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3433600ns, authenticated={}] }})(<time:3021339598600>)
+	at reactivemongo.IsMaster(true, 9, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3021335026000ns, authenticated={}] }})(<time:3021339012900>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3021335026000ns, authenticated={}] }})(<time:3021337528300>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2843500ns, authenticated={}] }})(<time:3021335651300>)
+	at reactivemongo.ConnectAll$IsMaster(7, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2843500ns, authenticated={}] }})(<time:3011338934700>)
+	at reactivemongo.IsMaster(true, 7, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3011335247000ns, authenticated={}] }})(<time:3011338403700>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3011335247000ns, authenticated={}] }})(<time:3011337382800>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=1599700ns, authenticated={}] }})(<time:3011335981500>)
+	at reactivemongo.ConnectAll$IsMaster(5, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=1599700ns, authenticated={}] }})(<time:3001338193200>)
+	at reactivemongo.IsMaster(true, 5, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3001336126700ns, authenticated={}] }})(<time:3001337963000>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3554700ns, authenticated={}] }})(<time:3001336691500>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3554700ns, authenticated={}] }})(<time:3001335955500>)
+	at reactivemongo.ConnectAll$IsMaster(3, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3554700ns, authenticated={}] }})(<time:2991339409200>)
+	at reactivemongo.IsMaster(true, 3, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2991334677100ns, authenticated={}] }})(<time:2991338953500>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2991334677100ns, authenticated={}] }})(<time:2991337222800>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=3694600ns, authenticated={}] }})(<time:2991335406700>)
+2020-02-29 11:43:26,622 INFO  shutdown <154ms> service-stop Closing mongodb driver
+2020-02-29 11:43:27,614 INFO  p.core.server.AkkaHttpServer Running provided shutdown stop hooks
+2020-02-29 16:22:36,597 INFO  boot lila 3 / java 11.0.6, memory: 2048MB
+2020-02-29 16:22:38,577 INFO  reactivemongo.api.Driver [Supervisor-1] Creating connection: main
+2020-02-29 16:22:38,818 INFO  r.core.actors.MongoDBSystem [Supervisor-1/main] Starting the MongoDBSystem
+2020-02-29 16:22:38,860 INFO  reactivemongo.core.netty.Pack Instantiated reactivemongo.core.netty.Pack
+2020-02-29 16:22:39,729 INFO  db.main MongoDB connected to lichess in 1172.00 ms
+2020-02-29 16:22:40,866 INFO  io.lettuce.core.EpollProvider Starting without optional epoll library
+2020-02-29 16:22:40,870 INFO  io.lettuce.core.KqueueProvider Starting without optional kqueue library
+2020-02-29 16:22:44,615 INFO  boot Loaded lila modules in 6357.00 ms
+2020-02-29 16:22:47,446 INFO  play.api.Play Application started (Dev) (no global state)
+2020-02-29 16:22:49,055 INFO  reactivemongo.api.Driver [Supervisor-1] Creating connection: puzzle
+2020-02-29 16:22:49,057 INFO  r.core.actors.MongoDBSystem [Supervisor-1/puzzle] Starting the MongoDBSystem
+2020-02-29 16:22:49,059 INFO  reactivemongo.core.netty.Pack Instantiated reactivemongo.core.netty.Pack
+2020-02-29 16:22:50,254 INFO  http 200 GET / Lobby.home 1788ms
+2020-02-29 17:29:50,940 INFO  p.core.server.AkkaHttpServer Stopping Akka HTTP server...
+2020-02-29 17:29:51,058 INFO  p.core.server.AkkaHttpServer Terminating server binding for /0:0:0:0:0:0:0:0:9663
+2020-02-29 17:29:51,669 INFO  shutdown before-service-unbind Telling lila-ws we're stopping
+2020-02-29 17:29:53,001 INFO  shutdown <1042ms> before-service-unbind Telling lila-ws we're stopping
+2020-02-29 17:29:53,008 INFO  shutdown service-unbind Stopping the socket redis pool
+2020-02-29 17:29:53,048 INFO  shutdown service-unbind Stopping the fishnet redis pool
+2020-02-29 17:29:53,059 INFO  shutdown service-unbind Stop round socket
+2020-02-29 17:29:53,259 ERROR socket lila-ws stop
+lila.base.LilaException$$anon$1: Future timed out after 1 second
+	at lila.base.LilaException$.apply(LilaException.scala:14)
+	at lila.base.PimpedFuture$.$anonfun$withTimeout$extension$1(PimpedFutures.scala:126)
+	at lila.base.PimpedFuture$.$anonfun$withTimeout$extension$2(PimpedFutures.scala:134)
+	at akka.pattern.FutureTimeoutSupport.liftedTree1$1(FutureTimeoutSupport.scala:31)
+	at akka.pattern.FutureTimeoutSupport.$anonfun$after$1(FutureTimeoutSupport.scala:31)
+	at akka.actor.Scheduler$$anon$7.run(Scheduler.scala:476)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:47)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:47)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+2020-02-29 17:29:53,433 INFO  shutdown 0 round ducts have stopped
+2020-02-29 17:29:53,438 INFO  shutdown <38ms> service-unbind Stop round socket
+2020-02-29 17:29:55,457 INFO  shutdown <2407ms> service-unbind Stopping the socket redis pool
+2020-02-29 17:29:55,465 INFO  shutdown <2406ms> service-unbind Stopping the fishnet redis pool
+2020-02-29 17:29:55,469 INFO  shutdown service-stop Closing mongodb driver
+2020-02-29 17:29:55,482 INFO  reactivemongo.api.Driver [Supervisor-1] Closing instance of ReactiveMongo driver
+2020-02-29 17:29:55,612 INFO  shutdown service-stop Freeing dev memory
+2020-02-29 17:29:55,716 INFO  shutdown <19ms> service-stop Freeing dev memory
+2020-02-29 17:29:56,085 ERROR reactivemongo.api.Cursor fails to send request
+reactivemongo.core.actors.Exceptions$ClosedException: MongoError['This MongoConnection is closed (Supervisor-1/main)']
+Caused by: reactivemongo.core.actors.Exceptions$InternalState: 
+	at reactivemongo.ConnectAll$IsMaster(810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=7376400ns, authenticated={}] }})(<time:23828768513300>)
+	at reactivemongo.IsMaster(true, 810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23828759501200ns, authenticated={}] }})(<time:23828767749000>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828760665000>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828759093000>)
+	at reactivemongo.ConnectAll$IsMaster(808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23818765323800>)
+	at reactivemongo.IsMaster(true, 808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23818758660500ns, authenticated={}] }})(<time:23818764831600>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818760534700>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818758288000>)
+	at reactivemongo.ConnectAll$IsMaster(806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23808765111900>)
+	at reactivemongo.IsMaster(true, 806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23808758273600ns, authenticated={}] }})(<time:23808764651100>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808759971400>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808749034700>)
+	at reactivemongo.ConnectAll$IsMaster(804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23798777078300>)
+	at reactivemongo.IsMaster(true, 804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798776915100>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798770703900>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23798770090600>)
+	at reactivemongo.ConnectAll$IsMaster(802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23788749135300>)
+	at reactivemongo.IsMaster(true, 802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788749089800>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788748492300>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23788748410700>)
+	at reactivemongo.ConnectAll$IsMaster(800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23778777554100>)
+	at reactivemongo.IsMaster(true, 800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778777439200>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778775371700>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23778775035600>)
+	at reactivemongo.ConnectAll$IsMaster(798, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23768761341000>)
+2020-02-29 17:29:56,380 WARN  reactivemongo.api.Cursor cannot continue after fatal request error
+reactivemongo.core.actors.Exceptions$ClosedException: MongoError['This MongoConnection is closed (Supervisor-1/main)']
+Caused by: reactivemongo.core.actors.Exceptions$InternalState: 
+	at reactivemongo.ConnectAll$IsMaster(810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=7376400ns, authenticated={}] }})(<time:23828768513300>)
+	at reactivemongo.IsMaster(true, 810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23828759501200ns, authenticated={}] }})(<time:23828767749000>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828760665000>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828759093000>)
+	at reactivemongo.ConnectAll$IsMaster(808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23818765323800>)
+	at reactivemongo.IsMaster(true, 808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23818758660500ns, authenticated={}] }})(<time:23818764831600>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818760534700>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818758288000>)
+	at reactivemongo.ConnectAll$IsMaster(806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23808765111900>)
+	at reactivemongo.IsMaster(true, 806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23808758273600ns, authenticated={}] }})(<time:23808764651100>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808759971400>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808749034700>)
+	at reactivemongo.ConnectAll$IsMaster(804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23798777078300>)
+	at reactivemongo.IsMaster(true, 804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798776915100>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798770703900>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23798770090600>)
+	at reactivemongo.ConnectAll$IsMaster(802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23788749135300>)
+	at reactivemongo.IsMaster(true, 802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788749089800>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788748492300>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23788748410700>)
+	at reactivemongo.ConnectAll$IsMaster(800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23778777554100>)
+	at reactivemongo.IsMaster(true, 800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778777439200>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778775371700>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23778775035600>)
+	at reactivemongo.ConnectAll$IsMaster(798, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23768761341000>)
+2020-02-29 17:29:56,385 ERROR reactivemongo.api.Cursor fails to send request
+reactivemongo.core.actors.Exceptions$ClosedException: MongoError['This MongoConnection is closed (Supervisor-1/main)']
+Caused by: reactivemongo.core.actors.Exceptions$InternalState: 
+	at reactivemongo.ConnectAll$IsMaster(810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=7376400ns, authenticated={}] }})(<time:23828768513300>)
+	at reactivemongo.IsMaster(true, 810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23828759501200ns, authenticated={}] }})(<time:23828767749000>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828760665000>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828759093000>)
+	at reactivemongo.ConnectAll$IsMaster(808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23818765323800>)
+	at reactivemongo.IsMaster(true, 808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23818758660500ns, authenticated={}] }})(<time:23818764831600>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818760534700>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818758288000>)
+	at reactivemongo.ConnectAll$IsMaster(806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23808765111900>)
+	at reactivemongo.IsMaster(true, 806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23808758273600ns, authenticated={}] }})(<time:23808764651100>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808759971400>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808749034700>)
+	at reactivemongo.ConnectAll$IsMaster(804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23798777078300>)
+	at reactivemongo.IsMaster(true, 804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798776915100>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798770703900>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23798770090600>)
+	at reactivemongo.ConnectAll$IsMaster(802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23788749135300>)
+	at reactivemongo.IsMaster(true, 802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788749089800>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788748492300>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23788748410700>)
+	at reactivemongo.ConnectAll$IsMaster(800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23778777554100>)
+	at reactivemongo.IsMaster(true, 800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778777439200>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778775371700>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23778775035600>)
+	at reactivemongo.ConnectAll$IsMaster(798, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23768761341000>)
+2020-02-29 17:29:56,494 WARN  reactivemongo.api.Cursor cannot continue after fatal request error
+reactivemongo.core.actors.Exceptions$ClosedException: MongoError['This MongoConnection is closed (Supervisor-1/main)']
+Caused by: reactivemongo.core.actors.Exceptions$InternalState: 
+	at reactivemongo.ConnectAll$IsMaster(810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=7376400ns, authenticated={}] }})(<time:23828768513300>)
+	at reactivemongo.IsMaster(true, 810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23828759501200ns, authenticated={}] }})(<time:23828767749000>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828760665000>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828759093000>)
+	at reactivemongo.ConnectAll$IsMaster(808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23818765323800>)
+	at reactivemongo.IsMaster(true, 808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23818758660500ns, authenticated={}] }})(<time:23818764831600>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818760534700>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818758288000>)
+	at reactivemongo.ConnectAll$IsMaster(806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23808765111900>)
+	at reactivemongo.IsMaster(true, 806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23808758273600ns, authenticated={}] }})(<time:23808764651100>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808759971400>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808749034700>)
+	at reactivemongo.ConnectAll$IsMaster(804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23798777078300>)
+	at reactivemongo.IsMaster(true, 804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798776915100>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798770703900>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23798770090600>)
+	at reactivemongo.ConnectAll$IsMaster(802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23788749135300>)
+	at reactivemongo.IsMaster(true, 802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788749089800>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788748492300>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23788748410700>)
+	at reactivemongo.ConnectAll$IsMaster(800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23778777554100>)
+	at reactivemongo.IsMaster(true, 800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778777439200>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778775371700>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23778775035600>)
+	at reactivemongo.ConnectAll$IsMaster(798, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23768761341000>)
+2020-02-29 17:29:56,510 ERROR reactivemongo.api.Cursor fails to send request
+reactivemongo.core.actors.Exceptions$ClosedException: MongoError['This MongoConnection is closed (Supervisor-1/main)']
+Caused by: reactivemongo.core.actors.Exceptions$InternalState: 
+	at reactivemongo.ConnectAll$IsMaster(810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=7376400ns, authenticated={}] }})(<time:23828768513300>)
+	at reactivemongo.IsMaster(true, 810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23828759501200ns, authenticated={}] }})(<time:23828767749000>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828760665000>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828759093000>)
+	at reactivemongo.ConnectAll$IsMaster(808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23818765323800>)
+	at reactivemongo.IsMaster(true, 808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23818758660500ns, authenticated={}] }})(<time:23818764831600>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818760534700>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818758288000>)
+	at reactivemongo.ConnectAll$IsMaster(806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23808765111900>)
+	at reactivemongo.IsMaster(true, 806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23808758273600ns, authenticated={}] }})(<time:23808764651100>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808759971400>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808749034700>)
+	at reactivemongo.ConnectAll$IsMaster(804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23798777078300>)
+	at reactivemongo.IsMaster(true, 804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798776915100>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798770703900>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23798770090600>)
+	at reactivemongo.ConnectAll$IsMaster(802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23788749135300>)
+	at reactivemongo.IsMaster(true, 802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788749089800>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788748492300>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23788748410700>)
+	at reactivemongo.ConnectAll$IsMaster(800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23778777554100>)
+	at reactivemongo.IsMaster(true, 800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778777439200>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778775371700>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23778775035600>)
+	at reactivemongo.ConnectAll$IsMaster(798, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23768761341000>)
+2020-02-29 17:29:56,541 WARN  reactivemongo.api.Cursor cannot continue after fatal request error
+reactivemongo.core.actors.Exceptions$ClosedException: MongoError['This MongoConnection is closed (Supervisor-1/main)']
+Caused by: reactivemongo.core.actors.Exceptions$InternalState: 
+	at reactivemongo.ConnectAll$IsMaster(810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=7376400ns, authenticated={}] }})(<time:23828768513300>)
+	at reactivemongo.IsMaster(true, 810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23828759501200ns, authenticated={}] }})(<time:23828767749000>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828760665000>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828759093000>)
+	at reactivemongo.ConnectAll$IsMaster(808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23818765323800>)
+	at reactivemongo.IsMaster(true, 808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23818758660500ns, authenticated={}] }})(<time:23818764831600>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818760534700>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818758288000>)
+	at reactivemongo.ConnectAll$IsMaster(806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23808765111900>)
+	at reactivemongo.IsMaster(true, 806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23808758273600ns, authenticated={}] }})(<time:23808764651100>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808759971400>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808749034700>)
+	at reactivemongo.ConnectAll$IsMaster(804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23798777078300>)
+	at reactivemongo.IsMaster(true, 804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798776915100>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798770703900>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23798770090600>)
+	at reactivemongo.ConnectAll$IsMaster(802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23788749135300>)
+	at reactivemongo.IsMaster(true, 802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788749089800>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788748492300>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23788748410700>)
+	at reactivemongo.ConnectAll$IsMaster(800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23778777554100>)
+	at reactivemongo.IsMaster(true, 800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778777439200>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778775371700>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23778775035600>)
+	at reactivemongo.ConnectAll$IsMaster(798, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23768761341000>)
+2020-02-29 17:29:56,914 INFO  r.core.actors.MongoDBSystem [Supervisor-1/main] Stopping the MongoDBSystem
+2020-02-29 17:29:57,106 WARN  round.titivate reactivemongo.core.actors.Exceptions$ClosedException: MongoError['This MongoConnection is closed (Supervisor-1/main)']
+reactivemongo.core.actors.Exceptions$ClosedException: MongoError['This MongoConnection is closed (Supervisor-1/main)']
+Caused by: reactivemongo.core.actors.Exceptions$InternalState: 
+	at reactivemongo.ConnectAll$IsMaster(810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=7376400ns, authenticated={}] }})(<time:23828768513300>)
+	at reactivemongo.IsMaster(true, 810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23828759501200ns, authenticated={}] }})(<time:23828767749000>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828760665000>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828759093000>)
+	at reactivemongo.ConnectAll$IsMaster(808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23818765323800>)
+	at reactivemongo.IsMaster(true, 808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23818758660500ns, authenticated={}] }})(<time:23818764831600>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818760534700>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818758288000>)
+	at reactivemongo.ConnectAll$IsMaster(806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23808765111900>)
+	at reactivemongo.IsMaster(true, 806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23808758273600ns, authenticated={}] }})(<time:23808764651100>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808759971400>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808749034700>)
+	at reactivemongo.ConnectAll$IsMaster(804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23798777078300>)
+	at reactivemongo.IsMaster(true, 804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798776915100>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798770703900>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23798770090600>)
+	at reactivemongo.ConnectAll$IsMaster(802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23788749135300>)
+	at reactivemongo.IsMaster(true, 802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788749089800>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788748492300>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23788748410700>)
+	at reactivemongo.ConnectAll$IsMaster(800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23778777554100>)
+	at reactivemongo.IsMaster(true, 800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778777439200>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778775371700>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23778775035600>)
+	at reactivemongo.ConnectAll$IsMaster(798, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23768761341000>)
+2020-02-29 17:29:57,266 ERROR akka.stream.Materializer [lila.tournament.CreatedOrganizer] Upstream failed.
+reactivemongo.core.actors.Exceptions$ClosedException: MongoError['This MongoConnection is closed (Supervisor-1/main)']
+Caused by: reactivemongo.core.actors.Exceptions$InternalState: 
+	at reactivemongo.ConnectAll$IsMaster(810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=7376400ns, authenticated={}] }})(<time:23828768513300>)
+	at reactivemongo.IsMaster(true, 810, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23828759501200ns, authenticated={}] }})(<time:23828767749000>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828760665000>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23828759093000>)
+	at reactivemongo.ConnectAll$IsMaster(808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5634900ns, authenticated={}] }})(<time:23818765323800>)
+	at reactivemongo.IsMaster(true, 808, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23818758660500ns, authenticated={}] }})(<time:23818764831600>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818760534700>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23818758288000>)
+	at reactivemongo.ConnectAll$IsMaster(806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=5792800ns, authenticated={}] }})(<time:23808765111900>)
+	at reactivemongo.IsMaster(true, 806, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23808758273600ns, authenticated={}] }})(<time:23808764651100>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808759971400>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23808749034700>)
+	at reactivemongo.ConnectAll$IsMaster(804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=6908500ns, authenticated={}] }})(<time:23798777078300>)
+	at reactivemongo.IsMaster(true, 804, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798776915100>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23798769244600ns, authenticated={}] }})(<time:23798770703900>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23798770090600>)
+	at reactivemongo.ConnectAll$IsMaster(802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=638200ns, authenticated={}] }})(<time:23788749135300>)
+	at reactivemongo.IsMaster(true, 802, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788749089800>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23788748293700ns, authenticated={}] }})(<time:23788748492300>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23788748410700>)
+	at reactivemongo.ConnectAll$IsMaster(800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2443500ns, authenticated={}] }})(<time:23778777554100>)
+	at reactivemongo.IsMaster(true, 800, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778777439200>)
+	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=23778774823300ns, authenticated={}] }})(<time:23778775371700>)
+	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23778775035600>)
+	at reactivemongo.ConnectAll$IsMaster(798, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=2204400ns, authenticated={}] }})(<time:23768761341000>)
+2020-02-29 17:29:57,421 INFO  r.core.actors.MongoDBSystem [Supervisor-1/puzzle] Stopping the MongoDBSystem
+2020-02-29 17:29:57,467 INFO  reactivemongo.api.Driver [Supervisor-1] Stopping the monitor...
+2020-02-29 17:29:57,601 WARN  akka.actor.CoordinatedShutdown Could not addJvmShutdownHook, due to: Shutdown in progress
+2020-02-29 17:29:57,986 INFO  shutdown <2373ms> service-stop Closing mongodb driver
+2020-02-29 17:29:58,848 INFO  p.core.server.AkkaHttpServer Running provided shutdown stop hooks

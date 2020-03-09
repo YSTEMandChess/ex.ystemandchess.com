@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="settings">Stellings</string>
+  <string name="closeAccount">Sluit rekening</string>
+  <string name="changedMindDoNotCloseAccount">Ek het van gedagte verander, moenie my rekening sluit nie</string>
+  <string name="thisAccountIsClosed">Hierdie rekening is gesluit.</string>
+</resources>

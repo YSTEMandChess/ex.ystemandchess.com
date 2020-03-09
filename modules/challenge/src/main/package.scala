@@ -1,0 +1,10 @@
+package lila
+
+import org.joda.time.DateTime
+
+package object challenge extends PackageObject {
+
+  type EitherChallenger = Either[Challenge.Anonymous, Challenge.Registered]
+
+  private[challenge] def inTwoWeeks = DateTime.now plusWeeks 2
+}
