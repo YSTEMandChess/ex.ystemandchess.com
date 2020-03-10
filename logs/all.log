@@ -597,3 +597,70 @@ Caused by: reactivemongo.core.actors.Exceptions$InternalState:
 2020-02-29 17:29:57,601 WARN  akka.actor.CoordinatedShutdown Could not addJvmShutdownHook, due to: Shutdown in progress
 2020-02-29 17:29:57,986 INFO  shutdown <2373ms> service-stop Closing mongodb driver
 2020-02-29 17:29:58,848 INFO  p.core.server.AkkaHttpServer Running provided shutdown stop hooks
+2020-03-10 14:20:24,746 INFO  boot lila 3 / java 11.0.6, memory: 2048MB
+2020-03-10 14:20:26,967 INFO  reactivemongo.api.Driver [Supervisor-1] Creating connection: main
+2020-03-10 14:20:27,163 INFO  r.core.actors.MongoDBSystem [Supervisor-1/main] Starting the MongoDBSystem
+2020-03-10 14:20:27,193 INFO  reactivemongo.core.netty.Pack Instantiated reactivemongo.core.netty.Pack
+2020-03-10 14:20:27,754 INFO  db.main MongoDB connected to lichess in 821.00 ms
+2020-03-10 14:20:28,732 INFO  io.lettuce.core.EpollProvider Starting without optional epoll library
+2020-03-10 14:20:28,734 INFO  io.lettuce.core.KqueueProvider Starting without optional kqueue library
+2020-03-10 14:20:38,559 INFO  boot Loaded lila modules in 11960.00 ms
+2020-03-10 14:20:45,147 INFO  play.api.Play Application started (Dev) (no global state)
+2020-03-10 14:20:47,504 INFO  reactivemongo.api.Driver [Supervisor-1] Creating connection: puzzle
+2020-03-10 14:20:47,506 INFO  r.core.actors.MongoDBSystem [Supervisor-1/puzzle] Starting the MongoDBSystem
+2020-03-10 14:20:47,507 INFO  reactivemongo.core.netty.Pack Instantiated reactivemongo.core.netty.Pack
+2020-03-10 14:20:48,976 INFO  http 200 GET / Lobby.home 3433ms
+2020-03-10 14:21:17,131 INFO  p.core.server.AkkaHttpServer Stopping Akka HTTP server...
+2020-03-10 14:21:17,161 INFO  p.core.server.AkkaHttpServer Terminating server binding for /0:0:0:0:0:0:0:0:9663
+2020-03-10 14:21:17,234 INFO  shutdown before-service-unbind Telling lila-ws we're stopping
+2020-03-10 14:21:18,286 INFO  shutdown service-unbind Stopping the socket redis pool
+2020-03-10 14:21:18,287 INFO  shutdown <1011ms> before-service-unbind Telling lila-ws we're stopping
+2020-03-10 14:21:18,312 INFO  shutdown service-unbind Stopping the fishnet redis pool
+2020-03-10 14:21:18,315 INFO  shutdown service-unbind Stop round socket
+2020-03-10 14:21:18,349 INFO  shutdown 0 round ducts have stopped
+2020-03-10 14:21:18,350 ERROR socket lila-ws stop
+lila.base.LilaException$$anon$1: Future timed out after 1 second
+	at lila.base.LilaException$.apply(LilaException.scala:14)
+	at lila.base.PimpedFuture$.$anonfun$withTimeout$extension$1(PimpedFutures.scala:126)
+	at lila.base.PimpedFuture$.$anonfun$withTimeout$extension$2(PimpedFutures.scala:134)
+	at akka.pattern.FutureTimeoutSupport.liftedTree1$1(FutureTimeoutSupport.scala:31)
+	at akka.pattern.FutureTimeoutSupport.$anonfun$after$1(FutureTimeoutSupport.scala:31)
+	at akka.actor.Scheduler$$anon$7.run(Scheduler.scala:476)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:47)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:47)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+2020-03-10 14:21:18,351 INFO  shutdown <3ms> service-unbind Stop round socket
+2020-03-10 14:21:18,369 INFO  shutdown <57ms> service-unbind Stopping the socket redis pool
+2020-03-10 14:21:18,370 INFO  shutdown <54ms> service-unbind Stopping the fishnet redis pool
+2020-03-10 14:21:18,371 INFO  shutdown service-stop Closing mongodb driver
+2020-03-10 14:21:18,380 INFO  reactivemongo.api.Driver [Supervisor-1] Closing instance of ReactiveMongo driver
+2020-03-10 14:21:18,386 INFO  shutdown service-stop Freeing dev memory
+2020-03-10 14:21:18,398 INFO  shutdown <9ms> service-stop Freeing dev memory
+2020-03-10 14:21:18,451 ERROR akka.actor.OneForOneStrategy null
+java.lang.NullPointerException: null
+	at lila.mon$.lila$mon$$counter(mon.scala:580)
+	at lila.mon$lobby$pool$wave$.scheduled(mon.scala:104)
+	at lila.pool.PoolActor$$anonfun$receive$1.applyOrElse(PoolActor.scala:56)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at lila.pool.PoolActor.aroundReceive(PoolActor.scala:12)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+2020-03-10 14:21:18,479 INFO  r.core.actors.MongoDBSystem [Supervisor-1/puzzle] Stopping the MongoDBSystem
+2020-03-10 14:21:18,479 INFO  r.core.actors.MongoDBSystem [Supervisor-1/main] Stopping the MongoDBSystem
+2020-03-10 14:21:18,492 INFO  reactivemongo.api.Driver [Supervisor-1] Stopping the monitor...
+2020-03-10 14:21:18,508 WARN  akka.actor.CoordinatedShutdown Could not addJvmShutdownHook, due to: Shutdown in progress
+2020-03-10 14:21:18,557 INFO  shutdown <171ms> service-stop Closing mongodb driver
+2020-03-10 14:21:18,579 INFO  p.core.server.AkkaHttpServer Running provided shutdown stop hooks

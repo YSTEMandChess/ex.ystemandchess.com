@@ -1,1 +1,1 @@
-window.lichess=window.lichess||{};console.info("Lichess is open source! https://github.com/ornicar/lila");lichess.info = "Assets built 2020-02-29T23:05:49 from sha 49501803c4";
+window.lichess=window.lichess||{};console.info("Lichess is open source! https://github.com/ornicar/lila");lichess.info = "Assets built 2020-03-10T20:06:54 from sha 18988651";

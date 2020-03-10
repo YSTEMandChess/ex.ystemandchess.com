@@ -19,4 +19,4 @@ escape:"esc",plus:"+",mod:/Mac|iPod|iPhone|iPad/.test(navigator.platform)?"meta"
 {};return this};c.prototype.stopCallback=function(a,b){return-1<(" "+b.className+" ").indexOf(" mousetrap ")||B(b,this.target)?!1:"INPUT"==b.tagName||"SELECT"==b.tagName||"TEXTAREA"==b.tagName||b.isContentEditable};c.prototype.handleKey=function(){return this._handleKey.apply(this,arguments)};c.init=function(){var a=c(r),b;for(b in a)"_"!==b.charAt(0)&&(c[b]=function(b){return function(){return a[b].apply(a,arguments)}}(b))};c.init();C.Mousetrap=c;"undefined"!==typeof module&&module.exports&&(module.exports=
 c);"function"===typeof define&&define.amd&&define(function(){return c})})(window,document);
 
-window.lichess=window.lichess||{};console.info("Lichess is open source! https://github.com/ornicar/lila");lichess.info = "Assets built 2020-02-29T23:05:49 from sha 49501803c4";
+window.lichess=window.lichess||{};console.info("Lichess is open source! https://github.com/ornicar/lila");lichess.info = "Assets built 2020-03-10T20:06:54 from sha 18988651";

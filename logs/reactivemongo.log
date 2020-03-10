@@ -192,3 +192,13 @@ Caused by: reactivemongo.core.actors.Exceptions$InternalState:
 2020-02-29 17:29:56,914 [INFO] [Supervisor-1/main] Stopping the MongoDBSystem
 2020-02-29 17:29:57,421 [INFO] [Supervisor-1/puzzle] Stopping the MongoDBSystem
 2020-02-29 17:29:57,467 [INFO] [Supervisor-1] Stopping the monitor...
+2020-03-10 14:20:26,967 [INFO] [Supervisor-1] Creating connection: main
+2020-03-10 14:20:27,163 [INFO] [Supervisor-1/main] Starting the MongoDBSystem
+2020-03-10 14:20:27,193 [INFO] Instantiated reactivemongo.core.netty.Pack
+2020-03-10 14:20:47,504 [INFO] [Supervisor-1] Creating connection: puzzle
+2020-03-10 14:20:47,506 [INFO] [Supervisor-1/puzzle] Starting the MongoDBSystem
+2020-03-10 14:20:47,507 [INFO] Instantiated reactivemongo.core.netty.Pack
+2020-03-10 14:21:18,380 [INFO] [Supervisor-1] Closing instance of ReactiveMongo driver
+2020-03-10 14:21:18,479 [INFO] [Supervisor-1/puzzle] Stopping the MongoDBSystem
+2020-03-10 14:21:18,479 [INFO] [Supervisor-1/main] Stopping the MongoDBSystem
+2020-03-10 14:21:18,492 [INFO] [Supervisor-1] Stopping the monitor...
