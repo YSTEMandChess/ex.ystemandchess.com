@@ -1217,6 +1217,27 @@ cg-container {
   }
 }
 
+#topnav [href="/tv"] {
+  display:none;
+}
+
+#topnav [href ="/games"] {
+  display:none;
+}
+
+#topnav [href ="/streamer"] {
+  display:none;
+}
+
+#topnav [href ="/broadcast"] {
+  display:none;
+}
+
+#topnav [href ="/video"] {
+  display:none;
+}
+
+
 @media (max-width: 979px) and (min-width: 500px) {
   #topnav {
     max-width: 70%;
