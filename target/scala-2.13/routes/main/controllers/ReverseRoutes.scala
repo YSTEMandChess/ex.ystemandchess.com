@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/benjaminclark964/app.ystemandchess.com/conf/routes
-// @DATE:Tue Mar 10 14:11:49 MDT 2020
+// @SOURCE:/home/benjamin/app.ystemandchess.com/conf/routes
+// @DATE:Tue Apr 07 17:22:43 MDT 2020
 
 import play.api.mvc.Call
 

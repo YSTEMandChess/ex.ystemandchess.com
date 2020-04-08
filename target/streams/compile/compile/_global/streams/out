@@ -1,10 +1,10 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/benjaminclark964/app.ystemandchess.com/app/controllers/Bot.scala:3:22: Unused import[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/benjamin/app.ystemandchess.com/app/controllers/Bot.scala:3:22: Unused import[0m
 [0m[[0m[33mwarn[0m] [0m[0mimport play.api.i18n.Lang[0m
 [0m[[0m[33mwarn[0m] [0m[0m                     ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/benjaminclark964/app.ystemandchess.com/app/Env.scala:122:18: class UpdateWriteResult in package commands is deprecated (since 0.16.0): Internal: will be made private[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/benjamin/app.ystemandchess.com/app/Env.scala:122:18: class UpdateWriteResult in package commands is deprecated (since 0.16.0): Internal: will be made private[0m
 [0m[[0m[33mwarn[0m] [0m[0m      _          <- user.repo.disable(u, keepEmail = badApple || playbanned)[0m
 [0m[[0m[33mwarn[0m] [0m[0m                 ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/benjaminclark964/app.ystemandchess.com/app/Env.scala:133:18: class UpdateWriteResult in package commands is deprecated (since 0.16.0): Internal: will be made private[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/benjamin/app.ystemandchess.com/app/Env.scala:133:18: class UpdateWriteResult in package commands is deprecated (since 0.16.0): Internal: will be made private[0m
 [0m[[0m[33mwarn[0m] [0m[0m      _          <- coach.api.remove(u.id)[0m
 [0m[[0m[33mwarn[0m] [0m[0m                 ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mthree warnings found[0m

@@ -1,7 +1,7 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/benjaminclark964/app.ystemandchess.com/modules/report/src/main/ReportApi.scala:194:9: class UpdateWriteResult in package commands is deprecated (since 0.16.0): Internal: will be made private[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/benjamin/app.ystemandchess.com/modules/report/src/main/ReportApi.scala:194:9: class UpdateWriteResult in package commands is deprecated (since 0.16.0): Internal: will be made private[0m
 [0m[[0m[33mwarn[0m] [0m[0m      _ <- doProcessReport($inIds(open.map(_.id)), ModId.lichess)[0m
 [0m[[0m[33mwarn[0m] [0m[0m        ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/benjaminclark964/app.ystemandchess.com/modules/report/src/main/ReportApi.scala:201:9: class UpdateWriteResult in package commands is deprecated (since 0.16.0): Internal: will be made private[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/benjamin/app.ystemandchess.com/modules/report/src/main/ReportApi.scala:201:9: class UpdateWriteResult in package commands is deprecated (since 0.16.0): Internal: will be made private[0m
 [0m[[0m[33mwarn[0m] [0m[0m      _ <- coll.update.one([0m
 [0m[[0m[33mwarn[0m] [0m[0m        ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m

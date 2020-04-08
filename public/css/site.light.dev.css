@@ -1237,6 +1237,18 @@ cg-container {
   display:none;
 }
 
+#topnav [href ="/training/coordinate"] {
+  display:none;
+}
+
+#topnav [href ="/coach"] {
+  display:none;
+}
+
+#topnav [href ="/study"] {
+  display:none;
+}
+
 
 @media (max-width: 979px) and (min-width: 500px) {
   #topnav {
