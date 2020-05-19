@@ -63,7 +63,13 @@ Installation instructions for Debian Linux
   - sudo apt install npm (You will want this too)
   - Verify with "nodejs -v"
 - yarn (1.0 >=)
-- gulp-cli (sudo yarn global add gulp-cli)
+  - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  - sudo apt update
+  - sudo apt install yarn
+  - Verify with "yarn --version"
+- gulp-cli 
+  - sudo yarn global add gulp-cli
 - Java (JDK 13)
 
 **Infrastructure**
