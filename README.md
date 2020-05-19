@@ -44,13 +44,73 @@ Use [GitHub issues](https://github.com/ornicar/lila/issues) for bug reports and 
 
 Installation
 ------------
+Installation instructions for Ubuntu 18.04 or greater
 
-```
-./lila # thin wrapper around sbt
-run
-```
+**Dependencies**
 
-The Wiki describes [how to setup a development environment](https://github.com/ornicar/lila/wiki/Lichess-Development-Onboarding).
+- git
+  - ```sudo apt update```
+  - ```sudo apt install git```
+  - Verify with ```git --version```
+- sbt (>= 1.3)
+  - ```echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list```
+  - ```curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo apt-key add```
+  - ```sudo apt-get update```
+  - ```sudo apt-get install sbt```
+- node (10 >=, nodejs)
+  - ```sudo apt update``` (make sure packages are updated)
+  - ```sudo apt install nodejs```
+  - ```sudo apt install npm``` (You will want this too)
+  - Verify with ```nodejs -v```
+- yarn (1.0 >=)
+  - ```curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -```
+  - ```echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list```
+  - ```sudo apt update```
+  - ```sudo apt install yarn```
+  - Verify with ```yarn --version```
+- gulp-cli 
+  - ```sudo yarn global add gulp-cli```
+- Java (JDK 13.0.2 using SDKMAN)
+  - ```curl -s "https://get.sdkman.io" | bash ```
+  - ```sdk list java``` (Will show available versions of java to download)
+  - ```sdk install java 13.0.2-open``` (13.0.2 is newest version of JDK 13 available at time of writing)
+  - ```sdk default java 13.0.2-open``` (Sets this version of java as default)
+  - If you need an installation path
+    - ```~/.sdkman/candidates/java/```
+  - Verify with ```java -version```
+
+**Infrastructure**
+
+- Mongodb (3.6.0 >=)
+  - https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/ (Make sure mongodb has been started before running lichess)
+- Redis
+  - https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04 (Make sure the redis server has been started before running lichess)
+
+
+**Compiling and Running Lichess**
+
+```git clone https://github.com/YSTEMandChess/app.ystemandchess.com.git```
+
+Within the "app.ystemandchess.com" directory run
+  - ```./lila``` # thin wrapper around sbt
+  - Once lila prompt has loaded run ```compile```
+    - Note, you only need to compile if new code is added while the application is not running
+  - Once compilation has finished run ```run```
+  - Once this command is complete go to your browser and type ```localhost:9663```
+  
+ **Web Sockets**
+ 
+ If you need websockets, which you probably do then,
+ 
+ ```
+ git clone https://github.com/ornicar/lila-ws.git
+cd lila-ws
+sbt run
+ ```
+
+
+
+Additional installation instructions can be found here on the original Wiki [how to setup a development environment](https://github.com/ornicar/lila/wiki/Lichess-Development-Onboarding).
 
 HTTP API
 --------
