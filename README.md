@@ -49,6 +49,9 @@ Installation instructions for Debian Linux
 **Dependencies**
 
 - git
+  - sudo apt update
+  - sudo apt install git
+  - Verify with "git --version"
 - sbt (>= 1.3)
 - node (10 >=, nodejs on Debian)
 - yarn (1.0 >=)
