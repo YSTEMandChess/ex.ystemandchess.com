@@ -90,6 +90,7 @@ Installation instructions for Ubuntu 18.04 or greater
 **Compiling and Running Lichess**
 
 ```git clone https://github.com/YSTEMandChess/app.ystemandchess.com.git```
+
 Within the "app.ystemandchess.com" directory run
   - ```./lila``` # thin wrapper around sbt
   - Once lila prompt has loaded run ```compile```
