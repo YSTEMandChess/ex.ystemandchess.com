@@ -53,6 +53,10 @@ Installation instructions for Debian Linux
   - sudo apt install git
   - Verify with "git --version"
 - sbt (>= 1.3)
+  - wget http://apt.typesafe.com/repo-deb-build-0002.deb
+  - sudo dpkg -i repo-deb-build-0002.deb
+  - sudo apt-get update
+  - sudo apt-get install sbt
 - node (10 >=, nodejs on Debian)
 - yarn (1.0 >=)
 - gulp-cli (sudo yarn global add gulp-cli)
