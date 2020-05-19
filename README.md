@@ -87,10 +87,15 @@ Installation instructions for Ubuntu 18.04 or greater
   - https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04 (Make sure the redis server has been started before running lichess)
 
 
-```
-./lila # thin wrapper around sbt
-run
-```
+**Compiling and Running Lichess**
+Within the "app.ystemandchess.com" directory run
+  - ```./lila``` # thin wrapper around sbt
+  - Once lila prompt has loaded run ```compile```
+    - Note, you only need to compile if new code is added while the application is not running
+  - Once compilation has finished run ```run```
+  - Once this command is complete go to your browser and type ```localhost:9663```
+
+
 
 The Wiki describes [how to setup a development environment](https://github.com/ornicar/lila/wiki/Lichess-Development-Onboarding).
 
