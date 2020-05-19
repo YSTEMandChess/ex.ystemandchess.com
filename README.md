@@ -46,7 +46,7 @@ Installation
 ------------
 Installation instructions for Debian Linux
 
-Dependencies
+**Dependencies**
 
 git
 
@@ -60,7 +60,7 @@ gulp-cli (sudo yarn global add gulp-cli)
 
 Java (JDK 13)
 
-Infrastructure
+**Infrastructure**
 
 Mongodb (3.6.0 >=)
 Redis
