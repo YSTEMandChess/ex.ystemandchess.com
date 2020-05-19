@@ -50,13 +50,9 @@ Installation instructions for Debian Linux
 
 - git
 - sbt (>= 1.3)
-
 - node (10 >=, nodejs on Debian)
-
 - yarn (1.0 >=)
-
 - gulp-cli (sudo yarn global add gulp-cli)
-
 - Java (JDK 13)
 
 **Infrastructure**
