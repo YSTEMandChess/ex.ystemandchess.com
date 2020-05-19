@@ -84,6 +84,7 @@ Installation instructions for Ubuntu 18.04 or greater
 - Mongodb (3.6.0 >=)
   - https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/ (Make sure mongodb has been started before running lichess)
 - Redis
+  - https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04 (Make sure the redis server has been started before running lichess)
 
 
 ```
