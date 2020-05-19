@@ -48,22 +48,22 @@ Installation instructions for Debian Linux
 
 **Dependencies**
 
-git
+- git
 
-sbt (>= 1.3)
+- sbt (>= 1.3)
 
-node (10 >=, nodejs on Debian)
+- node (10 >=, nodejs on Debian)
 
-yarn (1.0 >=)
+- yarn (1.0 >=)
 
-gulp-cli (sudo yarn global add gulp-cli)
+- gulp-cli (sudo yarn global add gulp-cli)
 
-Java (JDK 13)
+- Java (JDK 13)
 
 **Infrastructure**
 
-Mongodb (3.6.0 >=)
-Redis
+- Mongodb (3.6.0 >=)
+- Redis
 
 
 ```
