@@ -70,7 +70,14 @@ Installation instructions for Debian Linux
   - Verify with "yarn --version"
 - gulp-cli 
   - sudo yarn global add gulp-cli
-- Java (JDK 13)
+- Java (JDK 13.0.2 using SDKMAN)
+  - curl -s “https://get.sdkman.io" | bash
+  - sdk list java (Will show available versions of java to download)
+  - sdk install java 13.0.2-open (13.0.2 is newest version of JDK 13 available at time of writing)
+  - sdk default java 13.0.2-open (Sets this version of java as default)
+  - If you need an installation path
+    - ~/.sdkman/candidates/java/
+  - Verify with "java -version"
 
 **Infrastructure**
 
