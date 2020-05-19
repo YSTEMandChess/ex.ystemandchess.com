@@ -44,40 +44,40 @@ Use [GitHub issues](https://github.com/ornicar/lila/issues) for bug reports and 
 
 Installation
 ------------
-Installation instructions for Debian Linux
+Installation instructions for Ubuntu 18.04 or greater
 
 **Dependencies**
 
 - git
-  - sudo apt update
-  - sudo apt install git
-  - Verify with "git --version"
+  - ```sudo apt update```
+  - ```sudo apt install git```
+  - Verify with ```git --version```
 - sbt (>= 1.3)
-  - wget http://apt.typesafe.com/repo-deb-build-0002.deb
-  - sudo dpkg -i repo-deb-build-0002.deb
-  - sudo apt-get update
-  - sudo apt-get install sbt
-- node (10 >=, nodejs on Debian)
-  - sudo apt update (make sure packages are updated)
-  - sudo apt install nodejs
-  - sudo apt install npm (You will want this too)
-  - Verify with "nodejs -v"
+  - ```wget http://apt.typesafe.com/repo-deb-build-0002.deb```
+  - ```sudo dpkg -i repo-deb-build-0002.deb```
+  - ```sudo apt-get update```
+  - ```sudo apt-get install sbt```
+- node (10 >=, nodejs)
+  - ```sudo apt update``` (make sure packages are updated)
+  - ```sudo apt install nodejs```
+  - ```sudo apt install npm``` (You will want this too)
+  - Verify with ```nodejs -v```
 - yarn (1.0 >=)
-  - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-  - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-  - sudo apt update
-  - sudo apt install yarn
-  - Verify with "yarn --version"
+  - ```curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -```
+  - ```echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list```
+  - ```sudo apt update```
+  - ```sudo apt install yarn```
+  - Verify with ```yarn --version```
 - gulp-cli 
-  - sudo yarn global add gulp-cli
+  - ```sudo yarn global add gulp-cli```
 - Java (JDK 13.0.2 using SDKMAN)
   - ```curl -s “https://get.sdkman.io" | bash ```
-  - sdk list java (Will show available versions of java to download)
-  - sdk install java 13.0.2-open (13.0.2 is newest version of JDK 13 available at time of writing)
-  - sdk default java 13.0.2-open (Sets this version of java as default)
+  - ```sdk list java``` (Will show available versions of java to download)
+  - ```sdk install java 13.0.2-open``` (13.0.2 is newest version of JDK 13 available at time of writing)
+  - ```sdk default java 13.0.2-open``` (Sets this version of java as default)
   - If you need an installation path
-    - ~/.sdkman/candidates/java/
-  - Verify with "java -version"
+    - ```~/.sdkman/candidates/java/```
+  - Verify with ```java -version```
 
 **Infrastructure**
 
