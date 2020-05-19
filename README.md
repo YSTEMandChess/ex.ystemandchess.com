@@ -58,6 +58,10 @@ Installation instructions for Debian Linux
   - sudo apt-get update
   - sudo apt-get install sbt
 - node (10 >=, nodejs on Debian)
+  - sudo apt update (make sure packages are updated)
+  - sudo apt install nodejs
+  - sudo apt install npm (You will want this too)
+  - Verify with "nodejs -v"
 - yarn (1.0 >=)
 - gulp-cli (sudo yarn global add gulp-cli)
 - Java (JDK 13)
