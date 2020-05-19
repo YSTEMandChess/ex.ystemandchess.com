@@ -49,7 +49,6 @@ Installation instructions for Debian Linux
 **Dependencies**
 
 - git
-
 - sbt (>= 1.3)
 
 - node (10 >=, nodejs on Debian)
