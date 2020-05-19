@@ -89,12 +89,23 @@ Installation instructions for Ubuntu 18.04 or greater
 
 **Compiling and Running Lichess**
 
+```git clone https://github.com/YSTEMandChess/app.ystemandchess.com.git```
 Within the "app.ystemandchess.com" directory run
   - ```./lila``` # thin wrapper around sbt
   - Once lila prompt has loaded run ```compile```
     - Note, you only need to compile if new code is added while the application is not running
   - Once compilation has finished run ```run```
   - Once this command is complete go to your browser and type ```localhost:9663```
+  
+ **Web Sockets**
+ 
+ If you need websockets, which you probably do then,
+ 
+ ```
+ git clone https://github.com/ornicar/lila-ws.git
+cd lila-ws
+sbt run
+ ```
 
 
 
