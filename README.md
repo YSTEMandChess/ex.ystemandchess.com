@@ -98,7 +98,7 @@ Within the "app.ystemandchess.com" directory run
 
 
 
-The Wiki describes [how to setup a development environment](https://github.com/ornicar/lila/wiki/Lichess-Development-Onboarding).
+Additional installation instructions can be found here on the original Wiki [how to setup a development environment](https://github.com/ornicar/lila/wiki/Lichess-Development-Onboarding).
 
 HTTP API
 --------
