@@ -75,6 +75,7 @@ Installation instructions for Debian Linux
 **Infrastructure**
 
 - Mongodb (3.6.0 >=)
+  - https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/ (Make sure mongodb has been started before running lichess)
 - Redis
 
 
