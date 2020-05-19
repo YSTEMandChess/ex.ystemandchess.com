@@ -53,8 +53,8 @@ Installation instructions for Ubuntu 18.04 or greater
   - ```sudo apt install git```
   - Verify with ```git --version```
 - sbt (>= 1.3)
-  - ```wget http://apt.typesafe.com/repo-deb-build-0002.deb```
-  - ```sudo dpkg -i repo-deb-build-0002.deb```
+  - ```echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list```
+  - ```curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo apt-key add```
   - ```sudo apt-get update```
   - ```sudo apt-get install sbt```
 - node (10 >=, nodejs)
