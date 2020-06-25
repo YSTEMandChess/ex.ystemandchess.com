@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/benjamin/app.ystemandchess.com/conf/routes
-// @DATE:Tue Apr 07 17:22:43 MDT 2020
+// @SOURCE:/home/owenoertell/Documents/ystem/app.ystemandchess.com/conf/routes
+// @DATE:Wed Jun 17 13:43:21 EDT 2020
 
 
 package router {

@@ -1,4 +1,4 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/benjamin/app.ystemandchess.com/modules/db/src/main/Env.scala:37:21: method parseURI in object MongoConnection is deprecated (since 0.19.8): Use fromString[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/owenoertell/Documents/ystem/app.ystemandchess.com/modules/db/src/main/Env.scala:37:21: method parseURI in object MongoConnection is deprecated (since 0.19.8): Use fromString[0m
 [0m[[0m[33mwarn[0m] [0m[0m    MongoConnection.parseURI(c.getString(k)).get[0m
 [0m[[0m[33mwarn[0m] [0m[0m                    ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

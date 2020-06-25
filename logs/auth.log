@@ -1,0 +1,2 @@
+2020-06-23 12:13:25,335 [INFO] testUser john@doe.net fp: Some(FingerPrint(b9b019f7494841c02f73a357c842e323)) mustConfirm: YesBecauseIpSusp fp: b9b019f7494841c02f73a357c842e323 api: 0
+2020-06-23 12:24:00,745 [INFO] username email@email.com fp: Some(FingerPrint(f19deb80a2850a53a45b71c4f6bd8abb)) mustConfirm: YesBecauseIpSusp fp: f19deb80a2850a53a45b71c4f6bd8abb api: 0

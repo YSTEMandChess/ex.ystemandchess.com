@@ -1,7 +1,7 @@
 [0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/benjamin/app.ystemandchess.com/conf/base.conf,/home/benjamin/app.ystemandchess.com/target/scala-2.13/classes/base.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/benjamin/app.ystemandchess.com/conf/logback.xml,/home/benjamin/app.ystemandchess.com/target/scala-2.13/classes/logback.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/benjamin/app.ystemandchess.com/conf/routes,/home/benjamin/app.ystemandchess.com/target/scala-2.13/classes/routes)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/benjamin/app.ystemandchess.com/conf/application.conf,/home/benjamin/app.ystemandchess.com/target/scala-2.13/classes/application.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/benjamin/app.ystemandchess.com/conf/application.conf.default,/home/benjamin/app.ystemandchess.com/target/scala-2.13/classes/application.conf.default)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/benjamin/app.ystemandchess.com/conf/prod-logger.xml,/home/benjamin/app.ystemandchess.com/target/scala-2.13/classes/prod-logger.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/owenoertell/Documents/ystem/app.ystemandchess.com/conf/base.conf,/home/owenoertell/Documents/ystem/app.ystemandchess.com/target/scala-2.13/classes/base.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/owenoertell/Documents/ystem/app.ystemandchess.com/conf/application.conf.default,/home/owenoertell/Documents/ystem/app.ystemandchess.com/target/scala-2.13/classes/application.conf.default)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/owenoertell/Documents/ystem/app.ystemandchess.com/conf/prod-logger.xml,/home/owenoertell/Documents/ystem/app.ystemandchess.com/target/scala-2.13/classes/prod-logger.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/owenoertell/Documents/ystem/app.ystemandchess.com/conf/routes,/home/owenoertell/Documents/ystem/app.ystemandchess.com/target/scala-2.13/classes/routes)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/owenoertell/Documents/ystem/app.ystemandchess.com/conf/logback.xml,/home/owenoertell/Documents/ystem/app.ystemandchess.com/target/scala-2.13/classes/logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/owenoertell/Documents/ystem/app.ystemandchess.com/conf/application.conf,/home/owenoertell/Documents/ystem/app.ystemandchess.com/target/scala-2.13/classes/application.conf)[0m

@@ -799,3 +799,738 @@ Caused by: reactivemongo.core.actors.Exceptions$InternalState:
 	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=1310443ns, authenticated={}] }})(<time:1313327600839>)
 2020-04-07 18:13:02,979 INFO  shutdown <292ms> service-stop Closing mongodb driver
 2020-04-07 18:13:03,067 INFO  p.core.server.AkkaHttpServer Running provided shutdown stop hooks
+2020-06-17 13:46:00,356 INFO  boot lila 3 / java 14.0.1, memory: 2048MB
+2020-06-17 13:46:00,874 INFO  reactivemongo.api.Driver [Supervisor-1] Creating connection: main
+2020-06-17 13:46:00,919 INFO  r.core.actors.MongoDBSystem [Supervisor-1/main] Starting the MongoDBSystem
+2020-06-17 13:46:00,926 INFO  reactivemongo.core.netty.Pack Instantiated reactivemongo.core.netty.Pack
+2020-06-17 13:46:01,109 INFO  db.main MongoDB connected to lichess in 241.00 ms
+2020-06-17 13:46:01,419 INFO  io.lettuce.core.EpollProvider Starting without optional epoll library
+2020-06-17 13:46:01,420 INFO  io.lettuce.core.KqueueProvider Starting without optional kqueue library
+2020-06-17 13:46:02,461 INFO  boot Loaded lila modules in 1671.00 ms
+2020-06-17 13:46:03,136 INFO  play.api.Play Application started (Dev) (no global state)
+2020-06-17 13:46:03,384 INFO  reactivemongo.api.Driver [Supervisor-1] Creating connection: puzzle
+2020-06-17 13:46:03,386 INFO  r.core.actors.MongoDBSystem [Supervisor-1/puzzle] Starting the MongoDBSystem
+2020-06-17 13:46:03,387 INFO  reactivemongo.core.netty.Pack Instantiated reactivemongo.core.netty.Pack
+2020-06-17 13:46:03,676 INFO  http 200 GET / Lobby.home 463ms
+2020-06-17 13:46:04,427 INFO  http 200 GET /manifest.json Main.manifest 1ms
+2020-06-17 13:46:25,526 INFO  http 200 POST /setup/hook/htENX3ejMmqo Setup.hook 113ms
+2020-06-17 13:46:32,011 INFO  http 200 GET /setup/hook?_=1592415964116 Setup.hookForm 37ms
+2020-06-17 13:46:33,559 INFO  http 200 POST /setup/hook/htENX3ejMmqo Setup.hook 12ms
+2020-06-17 13:46:35,507 INFO  http 200 GET /setup/ai?_=1592415964117 Setup.aiForm 44ms
+2020-06-17 13:46:36,746 INFO  http 303 POST /setup/ai Setup.ai 168ms
+2020-06-17 13:46:36,911 INFO  http 200 GET /ut1Gawx1 Round.watcher 159ms
+2020-06-17 13:46:48,603 INFO  http 404 POST /statlog?e=roundTransientExpire NoHandler 1ms
+2020-06-17 13:46:48,623 INFO  http 200 GET /ut1Gawx1aicE?_=1592415996989 Round.player 26ms
+2020-06-17 13:47:01,009 INFO  http 404 POST /statlog?e=roundTransientExpire NoHandler 1ms
+2020-06-17 13:47:01,034 INFO  http 200 GET /ut1Gawx1aicE?_=1592415996990 Round.player 24ms
+2020-06-17 13:47:10,585 INFO  http 200 GET / Lobby.home 28ms
+2020-06-17 13:47:16,243 INFO  http 200 GET /setup/friend?_=1592416030696 Setup.friendForm 8ms
+2020-06-17 13:47:17,255 INFO  http 303 POST /setup/friend Setup.friend 50ms
+2020-06-17 13:47:17,288 INFO  http 200 GET /EGdYRxxR Round.watcher 29ms
+2020-06-17 13:47:22,380 INFO  http 200 GET /EGdYRxxR Round.watcher 11ms
+2020-06-17 13:47:30,537 INFO  http 200 GET /EGdYRxxR Round.watcher 9ms
+2020-06-17 13:47:32,390 INFO  http 303 POST /challenge/EGdYRxxR/accept Challenge.accept 19ms
+2020-06-17 13:47:32,413 INFO  http 200 GET /EGdYRxxR Round.watcher 20ms
+2020-06-17 13:47:45,930 INFO  http 200 GET /EGdYRxxR Round.watcher 22ms
+2020-06-17 13:48:03,220 INFO  http 200 GET /EGdYRxxR Round.watcher 12ms
+2020-06-17 13:48:32,019 INFO  http 200 GET / Lobby.home 37ms
+2020-06-17 13:48:37,630 INFO  p.core.server.AkkaHttpServer Stopping Akka HTTP server...
+2020-06-17 13:48:37,636 INFO  p.core.server.AkkaHttpServer Terminating server binding for /[0:0:0:0:0:0:0:0]:9663
+2020-06-17 13:48:37,667 INFO  shutdown before-service-unbind Telling lila-ws we're stopping
+2020-06-17 13:48:38,683 INFO  shutdown service-unbind Stopping the socket redis pool
+2020-06-17 13:48:38,684 INFO  shutdown <1015ms> before-service-unbind Telling lila-ws we're stopping
+2020-06-17 13:48:38,685 INFO  shutdown service-unbind Stopping the fishnet redis pool
+2020-06-17 13:48:38,686 INFO  shutdown service-unbind Stop round socket
+2020-06-17 13:48:38,696 ERROR socket lila-ws stop
+lila.base.LilaException$$anon$1: Future timed out after 1 second
+	at lila.base.LilaException$.apply(LilaException.scala:14)
+	at lila.base.PimpedFuture$.$anonfun$withTimeout$extension$1(PimpedFutures.scala:126)
+	at lila.base.PimpedFuture$.$anonfun$withTimeout$extension$2(PimpedFutures.scala:134)
+	at akka.pattern.FutureTimeoutSupport.liftedTree1$1(FutureTimeoutSupport.scala:31)
+	at akka.pattern.FutureTimeoutSupport.$anonfun$after$1(FutureTimeoutSupport.scala:31)
+	at akka.actor.Scheduler$$anon$7.run(Scheduler.scala:476)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:47)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:47)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+2020-06-17 13:48:38,699 INFO  shutdown 0 round ducts have stopped
+2020-06-17 13:48:38,700 INFO  shutdown <0ms> service-unbind Stop round socket
+2020-06-17 13:48:38,707 INFO  shutdown <22ms> service-unbind Stopping the socket redis pool
+2020-06-17 13:48:38,707 INFO  shutdown <20ms> service-unbind Stopping the fishnet redis pool
+2020-06-17 13:48:38,707 INFO  shutdown service-stop Closing mongodb driver
+2020-06-17 13:48:38,707 INFO  reactivemongo.api.Driver [Supervisor-1] Closing instance of ReactiveMongo driver
+2020-06-17 13:48:38,712 INFO  shutdown service-stop Freeing dev memory
+2020-06-17 13:48:38,717 INFO  shutdown <4ms> service-stop Freeing dev memory
+2020-06-17 13:48:38,729 INFO  r.core.actors.MongoDBSystem [Supervisor-1/puzzle] Stopping the MongoDBSystem
+2020-06-17 13:48:38,729 INFO  r.core.actors.MongoDBSystem [Supervisor-1/main] Stopping the MongoDBSystem
+2020-06-17 13:48:38,730 INFO  reactivemongo.api.Driver [Supervisor-1] Stopping the monitor...
+2020-06-17 13:48:38,733 WARN  akka.actor.CoordinatedShutdown Could not addJvmShutdownHook, due to: Shutdown in progress
+2020-06-17 13:48:38,748 INFO  shutdown <35ms> service-stop Closing mongodb driver
+2020-06-17 13:48:38,765 INFO  p.core.server.AkkaHttpServer Running provided shutdown stop hooks
+2020-06-23 12:07:10,437 INFO  boot lila 3 / java 14.0.1, memory: 2048MB
+2020-06-23 12:07:11,252 WARN  r.api.MongoConnection Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:07:11,252 INFO  r.api.MongoConnection Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:07:11,420 ERROR p.a.h.DefaultHttpErrorHandler 
+
+! @7g8d96ko8 - Internal server error, for (GET) [/EGdYRxxR] ->
+ 
+play.api.UnexpectedException: Unexpected exception[IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:211)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:142)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+Caused by: java.lang.IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:199)
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:175)
+	at lila.db.Db.$anonfun$db$2(Db.scala:40)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.common.Chronometer$.syncEffect(Chronometer.scala:102)
+	at lila.db.Db.db$lzycompute(Db.scala:43)
+	at lila.db.Db.db(Db.scala:38)
+	at lila.db.Db.apply(Db.scala:47)
+	at lila.app.EnvBoot.imageRepo$lzycompute(Env.scala:171)
+	at lila.app.EnvBoot.imageRepo(Env.scala:171)
+	at lila.app.EnvBoot.$anonfun$env$1(Env.scala:241)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.app.EnvBoot.<init>(Env.scala:241)
+	at lila.app.LilaComponents.boot$lzycompute(AppLoader.scala:64)
+	at lila.app.LilaComponents.boot(AppLoader.scala:64)
+	at lila.app.LilaComponents.env$lzycompute(AppLoader.scala:65)
+	at lila.app.LilaComponents.env(AppLoader.scala:65)
+	at lila.app.LilaComponents.main$lzycompute(AppLoader.scala:94)
+	at lila.app.LilaComponents.main(AppLoader.scala:94)
+	at lila.app.LilaComponents.<init>(AppLoader.scala:131)
+	at lila.app.AppLoader.load(AppLoader.scala:13)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:190)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:22)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:182)
+	... 24 common frames omitted
+2020-06-23 12:07:11,420 ERROR p.a.h.DefaultHttpErrorHandler 
+
+! @7g8d96ko8 - Internal server error, for (GET) [/] ->
+ 
+play.api.UnexpectedException: Unexpected exception[IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:211)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:142)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+Caused by: java.lang.IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:199)
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:175)
+	at lila.db.Db.$anonfun$db$2(Db.scala:40)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.common.Chronometer$.syncEffect(Chronometer.scala:102)
+	at lila.db.Db.db$lzycompute(Db.scala:43)
+	at lila.db.Db.db(Db.scala:38)
+	at lila.db.Db.apply(Db.scala:47)
+	at lila.app.EnvBoot.imageRepo$lzycompute(Env.scala:171)
+	at lila.app.EnvBoot.imageRepo(Env.scala:171)
+	at lila.app.EnvBoot.$anonfun$env$1(Env.scala:241)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.app.EnvBoot.<init>(Env.scala:241)
+	at lila.app.LilaComponents.boot$lzycompute(AppLoader.scala:64)
+	at lila.app.LilaComponents.boot(AppLoader.scala:64)
+	at lila.app.LilaComponents.env$lzycompute(AppLoader.scala:65)
+	at lila.app.LilaComponents.env(AppLoader.scala:65)
+	at lila.app.LilaComponents.main$lzycompute(AppLoader.scala:94)
+	at lila.app.LilaComponents.main(AppLoader.scala:94)
+	at lila.app.LilaComponents.<init>(AppLoader.scala:131)
+	at lila.app.AppLoader.load(AppLoader.scala:13)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:190)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:22)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:182)
+	... 24 common frames omitted
+2020-06-23 12:07:11,420 ERROR p.a.h.DefaultHttpErrorHandler 
+
+! @7g8d96ko8 - Internal server error, for (GET) [/assets/_bbm9Bf/compiled/lichess.serviceWorker.js?asset-url=%2F%2Flocalhost%3A9663&dev=1] ->
+ 
+play.api.UnexpectedException: Unexpected exception[IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:211)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:142)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+Caused by: java.lang.IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:199)
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:175)
+	at lila.db.Db.$anonfun$db$2(Db.scala:40)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.common.Chronometer$.syncEffect(Chronometer.scala:102)
+	at lila.db.Db.db$lzycompute(Db.scala:43)
+	at lila.db.Db.db(Db.scala:38)
+	at lila.db.Db.apply(Db.scala:47)
+	at lila.app.EnvBoot.imageRepo$lzycompute(Env.scala:171)
+	at lila.app.EnvBoot.imageRepo(Env.scala:171)
+	at lila.app.EnvBoot.$anonfun$env$1(Env.scala:241)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.app.EnvBoot.<init>(Env.scala:241)
+	at lila.app.LilaComponents.boot$lzycompute(AppLoader.scala:64)
+	at lila.app.LilaComponents.boot(AppLoader.scala:64)
+	at lila.app.LilaComponents.env$lzycompute(AppLoader.scala:65)
+	at lila.app.LilaComponents.env(AppLoader.scala:65)
+	at lila.app.LilaComponents.main$lzycompute(AppLoader.scala:94)
+	at lila.app.LilaComponents.main(AppLoader.scala:94)
+	at lila.app.LilaComponents.<init>(AppLoader.scala:131)
+	at lila.app.AppLoader.load(AppLoader.scala:13)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:190)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:22)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:182)
+	... 24 common frames omitted
+2020-06-23 12:07:13,562 ERROR p.a.h.DefaultHttpErrorHandler 
+
+! @7g8d96ko8 - Internal server error, for (GET) [/assets/_bbm9Bf/compiled/lichess.serviceWorker.js?asset-url=%2F%2Flocalhost%3A9663&dev=1] ->
+ 
+play.api.UnexpectedException: Unexpected exception[IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:211)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:142)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+Caused by: java.lang.IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:199)
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:175)
+	at lila.db.Db.$anonfun$db$2(Db.scala:40)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.common.Chronometer$.syncEffect(Chronometer.scala:102)
+	at lila.db.Db.db$lzycompute(Db.scala:43)
+	at lila.db.Db.db(Db.scala:38)
+	at lila.db.Db.apply(Db.scala:47)
+	at lila.app.EnvBoot.imageRepo$lzycompute(Env.scala:171)
+	at lila.app.EnvBoot.imageRepo(Env.scala:171)
+	at lila.app.EnvBoot.$anonfun$env$1(Env.scala:241)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.app.EnvBoot.<init>(Env.scala:241)
+	at lila.app.LilaComponents.boot$lzycompute(AppLoader.scala:64)
+	at lila.app.LilaComponents.boot(AppLoader.scala:64)
+	at lila.app.LilaComponents.env$lzycompute(AppLoader.scala:65)
+	at lila.app.LilaComponents.env(AppLoader.scala:65)
+	at lila.app.LilaComponents.main$lzycompute(AppLoader.scala:94)
+	at lila.app.LilaComponents.main(AppLoader.scala:94)
+	at lila.app.LilaComponents.<init>(AppLoader.scala:131)
+	at lila.app.AppLoader.load(AppLoader.scala:13)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:190)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:22)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:182)
+	... 24 common frames omitted
+2020-06-23 12:08:41,913 INFO  boot lila 3 / java 14.0.1, memory: 2048MB
+2020-06-23 12:08:42,234 WARN  r.api.MongoConnection Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:08:42,235 INFO  r.api.MongoConnection Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:08:42,305 ERROR p.a.h.DefaultHttpErrorHandler 
+
+! @7g8d9bpc0 - Internal server error, for (GET) [/] ->
+ 
+play.api.UnexpectedException: Unexpected exception[IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:211)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:142)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+Caused by: java.lang.IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:199)
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:175)
+	at lila.db.Db.$anonfun$db$2(Db.scala:40)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.common.Chronometer$.syncEffect(Chronometer.scala:102)
+	at lila.db.Db.db$lzycompute(Db.scala:43)
+	at lila.db.Db.db(Db.scala:38)
+	at lila.db.Db.apply(Db.scala:47)
+	at lila.app.EnvBoot.imageRepo$lzycompute(Env.scala:171)
+	at lila.app.EnvBoot.imageRepo(Env.scala:171)
+	at lila.app.EnvBoot.$anonfun$env$1(Env.scala:241)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.app.EnvBoot.<init>(Env.scala:241)
+	at lila.app.LilaComponents.boot$lzycompute(AppLoader.scala:64)
+	at lila.app.LilaComponents.boot(AppLoader.scala:64)
+	at lila.app.LilaComponents.env$lzycompute(AppLoader.scala:65)
+	at lila.app.LilaComponents.env(AppLoader.scala:65)
+	at lila.app.LilaComponents.main$lzycompute(AppLoader.scala:94)
+	at lila.app.LilaComponents.main(AppLoader.scala:94)
+	at lila.app.LilaComponents.<init>(AppLoader.scala:131)
+	at lila.app.AppLoader.load(AppLoader.scala:13)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:190)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:22)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:182)
+	... 24 common frames omitted
+2020-06-23 12:08:44,328 ERROR p.a.h.DefaultHttpErrorHandler 
+
+! @7g8d9bpc0 - Internal server error, for (GET) [/assets/_bbm9Bf/compiled/lichess.serviceWorker.js?asset-url=%2F%2Flocalhost%3A9663&dev=1] ->
+ 
+play.api.UnexpectedException: Unexpected exception[IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:211)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:142)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+Caused by: java.lang.IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:199)
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:175)
+	at lila.db.Db.$anonfun$db$2(Db.scala:40)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.common.Chronometer$.syncEffect(Chronometer.scala:102)
+	at lila.db.Db.db$lzycompute(Db.scala:43)
+	at lila.db.Db.db(Db.scala:38)
+	at lila.db.Db.apply(Db.scala:47)
+	at lila.app.EnvBoot.imageRepo$lzycompute(Env.scala:171)
+	at lila.app.EnvBoot.imageRepo(Env.scala:171)
+	at lila.app.EnvBoot.$anonfun$env$1(Env.scala:241)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.app.EnvBoot.<init>(Env.scala:241)
+	at lila.app.LilaComponents.boot$lzycompute(AppLoader.scala:64)
+	at lila.app.LilaComponents.boot(AppLoader.scala:64)
+	at lila.app.LilaComponents.env$lzycompute(AppLoader.scala:65)
+	at lila.app.LilaComponents.env(AppLoader.scala:65)
+	at lila.app.LilaComponents.main$lzycompute(AppLoader.scala:94)
+	at lila.app.LilaComponents.main(AppLoader.scala:94)
+	at lila.app.LilaComponents.<init>(AppLoader.scala:131)
+	at lila.app.AppLoader.load(AppLoader.scala:13)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:190)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:22)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:182)
+	... 24 common frames omitted
+2020-06-23 12:08:47,143 ERROR p.a.h.DefaultHttpErrorHandler 
+
+! @7g8d9bpc0 - Internal server error, for (GET) [/] ->
+ 
+play.api.UnexpectedException: Unexpected exception[IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:211)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:142)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+Caused by: java.lang.IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:199)
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:175)
+	at lila.db.Db.$anonfun$db$2(Db.scala:40)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.common.Chronometer$.syncEffect(Chronometer.scala:102)
+	at lila.db.Db.db$lzycompute(Db.scala:43)
+	at lila.db.Db.db(Db.scala:38)
+	at lila.db.Db.apply(Db.scala:47)
+	at lila.app.EnvBoot.imageRepo$lzycompute(Env.scala:171)
+	at lila.app.EnvBoot.imageRepo(Env.scala:171)
+	at lila.app.EnvBoot.$anonfun$env$1(Env.scala:241)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.app.EnvBoot.<init>(Env.scala:241)
+	at lila.app.LilaComponents.boot$lzycompute(AppLoader.scala:64)
+	at lila.app.LilaComponents.boot(AppLoader.scala:64)
+	at lila.app.LilaComponents.env$lzycompute(AppLoader.scala:65)
+	at lila.app.LilaComponents.env(AppLoader.scala:65)
+	at lila.app.LilaComponents.main$lzycompute(AppLoader.scala:94)
+	at lila.app.LilaComponents.main(AppLoader.scala:94)
+	at lila.app.LilaComponents.<init>(AppLoader.scala:131)
+	at lila.app.AppLoader.load(AppLoader.scala:13)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:190)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:22)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:182)
+	... 24 common frames omitted
+2020-06-23 12:09:04,446 ERROR p.a.h.DefaultHttpErrorHandler 
+
+! @7g8d9bpc0 - Internal server error, for (GET) [/] ->
+ 
+play.api.UnexpectedException: Unexpected exception[IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:211)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:142)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+Caused by: java.lang.IllegalArgumentException: The connection URI contains unsupported options: w, retryWrites
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:199)
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:175)
+	at lila.db.Db.$anonfun$db$2(Db.scala:40)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.common.Chronometer$.syncEffect(Chronometer.scala:102)
+	at lila.db.Db.db$lzycompute(Db.scala:43)
+	at lila.db.Db.db(Db.scala:38)
+	at lila.db.Db.apply(Db.scala:47)
+	at lila.app.EnvBoot.imageRepo$lzycompute(Env.scala:171)
+	at lila.app.EnvBoot.imageRepo(Env.scala:171)
+	at lila.app.EnvBoot.$anonfun$env$1(Env.scala:241)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.app.EnvBoot.<init>(Env.scala:241)
+	at lila.app.LilaComponents.boot$lzycompute(AppLoader.scala:64)
+	at lila.app.LilaComponents.boot(AppLoader.scala:64)
+	at lila.app.LilaComponents.env$lzycompute(AppLoader.scala:65)
+	at lila.app.LilaComponents.env(AppLoader.scala:65)
+	at lila.app.LilaComponents.main$lzycompute(AppLoader.scala:94)
+	at lila.app.LilaComponents.main(AppLoader.scala:94)
+	at lila.app.LilaComponents.<init>(AppLoader.scala:131)
+	at lila.app.AppLoader.load(AppLoader.scala:13)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:190)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:22)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:182)
+	... 24 common frames omitted
+2020-06-23 12:09:54,074 INFO  boot lila 3 / java 14.0.1, memory: 2048MB
+2020-06-23 12:09:54,333 WARN  r.api.MongoConnection Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:09:54,333 INFO  r.api.MongoConnection Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:09:54,388 ERROR p.a.h.DefaultHttpErrorHandler 
+
+! @7g8d9g22b - Internal server error, for (GET) [/] ->
+ 
+play.api.UnexpectedException: Unexpected exception[IllegalArgumentException: The connection URI contains unsupported options: w]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:211)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:142)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
+	at akka.actor.Actor.aroundReceive(Actor.scala:534)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+Caused by: java.lang.IllegalArgumentException: The connection URI contains unsupported options: w
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:199)
+	at reactivemongo.api.AsyncDriver.connect(AsyncDriver.scala:175)
+	at lila.db.Db.$anonfun$db$2(Db.scala:40)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.common.Chronometer$.syncEffect(Chronometer.scala:102)
+	at lila.db.Db.db$lzycompute(Db.scala:43)
+	at lila.db.Db.db(Db.scala:38)
+	at lila.db.Db.apply(Db.scala:47)
+	at lila.app.EnvBoot.imageRepo$lzycompute(Env.scala:171)
+	at lila.app.EnvBoot.imageRepo(Env.scala:171)
+	at lila.app.EnvBoot.$anonfun$env$1(Env.scala:241)
+	at lila.common.Chronometer$.sync(Chronometer.scala:97)
+	at lila.app.EnvBoot.<init>(Env.scala:241)
+	at lila.app.LilaComponents.boot$lzycompute(AppLoader.scala:64)
+	at lila.app.LilaComponents.boot(AppLoader.scala:64)
+	at lila.app.LilaComponents.env$lzycompute(AppLoader.scala:65)
+	at lila.app.LilaComponents.env(AppLoader.scala:65)
+	at lila.app.LilaComponents.main$lzycompute(AppLoader.scala:94)
+	at lila.app.LilaComponents.main(AppLoader.scala:94)
+	at lila.app.LilaComponents.<init>(AppLoader.scala:131)
+	at lila.app.AppLoader.load(AppLoader.scala:13)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:190)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:22)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:182)
+	... 24 common frames omitted
+2020-06-23 12:10:40,711 INFO  boot lila 3 / java 14.0.1, memory: 2048MB
+2020-06-23 12:10:40,929 WARN  r.api.MongoConnection Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:10:40,929 INFO  r.api.MongoConnection Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:10:40,943 INFO  reactivemongo.api.Driver [Supervisor-4] Creating connection: main
+2020-06-23 12:10:41,006 INFO  r.core.actors.MongoDBSystem [Supervisor-4/main] Starting the MongoDBSystem
+2020-06-23 12:10:41,027 INFO  reactivemongo.core.netty.Pack Instantiated reactivemongo.core.netty.Pack
+2020-06-23 12:10:41,895 INFO  db.main MongoDB connected to test in 961.00 ms
+2020-06-23 12:10:42,337 INFO  io.lettuce.core.EpollProvider Starting without optional epoll library
+2020-06-23 12:10:42,339 INFO  io.lettuce.core.KqueueProvider Starting without optional kqueue library
+2020-06-23 12:10:42,572 WARN  r.api.MongoConnection Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:10:42,573 INFO  r.api.MongoConnection Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:10:43,351 WARN  r.api.MongoConnection Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:10:43,351 INFO  r.api.MongoConnection Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:10:43,850 INFO  boot Loaded lila modules in 2961.00 ms
+2020-06-23 12:10:44,677 INFO  play.api.Play Application started (Dev) (no global state)
+2020-06-23 12:10:45,014 INFO  reactivemongo.api.Driver [Supervisor-4] Creating connection: puzzle
+2020-06-23 12:10:45,015 INFO  r.core.actors.MongoDBSystem [Supervisor-4/puzzle] Starting the MongoDBSystem
+2020-06-23 12:10:45,016 INFO  reactivemongo.core.netty.Pack Instantiated reactivemongo.core.netty.Pack
+2020-06-23 12:10:45,583 INFO  http 200 GET / Lobby.home 835ms
+2020-06-23 12:11:03,627 INFO  http 200 GET /setup/ai?_=1592928645988 Setup.aiForm 85ms
+2020-06-23 12:11:05,521 INFO  http 200 GET /setup/hook?_=1592928645989 Setup.hookForm 32ms
+2020-06-23 12:11:08,350 INFO  http 200 GET /setup/friend?_=1592928645990 Setup.friendForm 34ms
+2020-06-23 12:11:15,930 INFO  http 200 GET /dasher?_=1592928645991 Dasher.get 7ms
+2020-06-23 12:11:16,473 INFO  http 200 GET /login?referrer=/ Auth.login 14ms
+2020-06-23 12:11:20,394 INFO  http 200 GET /signup Auth.signup 15ms
+2020-06-23 12:13:25,142 INFO  security MaxMindIpGeo is disabled: java.io.FileNotFoundException: data/GeoLite2-City.mmdb (No such file or directory)
+2020-06-23 12:13:25,335 INFO  auth testUser john@doe.net fp: Some(FingerPrint(b9b019f7494841c02f73a357c842e323)) mustConfirm: YesBecauseIpSusp fp: b9b019f7494841c02f73a357c842e323 api: 0
+2020-06-23 12:13:25,341 INFO  slack [signups] :musical_note: @lichess: <https://lichess.org/@/testUser?mod|testUser> EMAIL: <https://lichess.org/mod/search?q=john@doe.net|john@doe.net> IP: <https://lichess.org/mod/search?q=0:0:0:0:0:0:0:1|0:0:0:0:0:0:0:1> FP: <https://lichess.org/mod/print/ubAZ90lI|ubAZ90lI> *proxy*
+2020-06-23 12:13:25,401 INFO  security Message(EmailAddress(****),Welcome to lichess.org, testUser,
+You have successfully created your account on https://lichess.org.
+
+Here is your profile page: http://localhost:9663/@/testUser. You can personalize it on http://localhost:9663/account/profile.
+
+Have fun, and may your pieces always find their way to your opponent's king!
+
+
+This is a service email related to your use of https://lichess.org.
+
+To contact us, please use https://lichess.org/contact.
+,Some(<div itemscope="itemscope" itemtype="http://schema.org/EmailMessage"><p itemprop="description">You have successfully created your account on https://lichess.org.<br /><br />Here is your profile page: http://localhost:9663/@/testUser. You can personalize it on http://localhost:9663/account/profile.<br /><br />Have fun, and may your pieces always find their way to your opponent's king!</p><div itemprop="publisher" itemscope="itemscope" itemtype="http://schema.org/Organization"></div></div>),None,None,None,3) -> No mailgun API URL
+2020-06-23 12:13:25,473 INFO  http 303 POST /signup Auth.signupPost 808ms
+2020-06-23 12:13:26,206 INFO  http 200 GET /@/testUser User.show 720ms
+2020-06-23 12:13:27,072 INFO  http 204 POST /auth/set-fp/f19deb80a2850a53a45b71c4f6bd8abb/82 Auth.setFingerPrint 114ms
+2020-06-23 12:13:34,111 INFO  http 200 GET /notify?page=1&_=1592928806300 Notify.recent 121ms
+2020-06-23 12:13:34,208 INFO  http 200 GET /dasher?_=1592928806301 Dasher.get 52ms
+2020-06-23 12:21:33,942 INFO  shutdown before-service-unbind Telling lila-ws we're stopping
+2020-06-23 12:21:34,959 INFO  shutdown service-unbind Stopping the socket redis pool
+2020-06-23 12:21:34,959 INFO  shutdown <1012ms> before-service-unbind Telling lila-ws we're stopping
+2020-06-23 12:21:34,959 INFO  shutdown service-unbind Stopping the fishnet redis pool
+2020-06-23 12:21:34,960 INFO  shutdown service-unbind Stop round socket
+2020-06-23 12:21:34,960 ERROR socket lila-ws stop
+lila.base.LilaException$$anon$1: Future timed out after 1 second
+	at lila.base.LilaException$.apply(LilaException.scala:14)
+	at lila.base.PimpedFuture$.$anonfun$withTimeout$extension$1(PimpedFutures.scala:126)
+	at lila.base.PimpedFuture$.$anonfun$withTimeout$extension$2(PimpedFutures.scala:134)
+	at akka.pattern.FutureTimeoutSupport.liftedTree1$1(FutureTimeoutSupport.scala:31)
+	at akka.pattern.FutureTimeoutSupport.$anonfun$after$1(FutureTimeoutSupport.scala:31)
+	at akka.actor.Scheduler$$anon$7.run(Scheduler.scala:476)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:47)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:47)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+2020-06-23 12:21:34,966 INFO  shutdown 0 round ducts have stopped
+2020-06-23 12:21:34,967 INFO  shutdown <0ms> service-unbind Stop round socket
+2020-06-23 12:21:34,979 INFO  shutdown <19ms> service-unbind Stopping the socket redis pool
+2020-06-23 12:21:34,979 INFO  shutdown service-stop Closing mongodb driver
+2020-06-23 12:21:34,979 INFO  shutdown <19ms> service-unbind Stopping the fishnet redis pool
+2020-06-23 12:21:34,979 INFO  reactivemongo.api.Driver [Supervisor-4] Closing instance of ReactiveMongo driver
+2020-06-23 12:21:34,984 INFO  shutdown service-stop Freeing dev memory
+2020-06-23 12:21:34,988 INFO  shutdown <4ms> service-stop Freeing dev memory
+2020-06-23 12:21:35,008 INFO  r.core.actors.MongoDBSystem [Supervisor-4/main] Stopping the MongoDBSystem
+2020-06-23 12:21:35,010 INFO  r.core.actors.MongoDBSystem [Supervisor-4/puzzle] Stopping the MongoDBSystem
+2020-06-23 12:21:35,011 INFO  reactivemongo.api.Driver [Supervisor-4] Stopping the monitor...
+2020-06-23 12:21:35,029 INFO  shutdown <45ms> service-stop Closing mongodb driver
+2020-06-23 12:21:35,088 INFO  boot lila 3 / java 14.0.1, memory: 2048MB
+2020-06-23 12:21:35,302 WARN  r.api.MongoConnection Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:21:35,302 INFO  r.api.MongoConnection Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:21:35,309 INFO  reactivemongo.api.Driver [Supervisor-5] Creating connection: main
+2020-06-23 12:21:35,310 INFO  r.core.actors.MongoDBSystem [Supervisor-5/main] Starting the MongoDBSystem
+2020-06-23 12:21:35,312 INFO  reactivemongo.core.netty.Pack Instantiated reactivemongo.core.netty.Pack
+2020-06-23 12:21:35,553 INFO  db.main MongoDB connected to lichess in 245.00 ms
+2020-06-23 12:21:35,635 WARN  r.api.MongoConnection Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:21:35,636 INFO  r.api.MongoConnection Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:21:36,011 WARN  r.api.MongoConnection Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:21:36,011 INFO  r.api.MongoConnection Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:21:36,319 INFO  boot Loaded lila modules in 1063.00 ms
+2020-06-23 12:21:36,791 INFO  play.api.Play Application started (Dev) (no global state)
+2020-06-23 12:21:37,010 INFO  reactivemongo.api.Driver [Supervisor-5] Creating connection: puzzle
+2020-06-23 12:21:37,010 INFO  r.core.actors.MongoDBSystem [Supervisor-5/puzzle] Starting the MongoDBSystem
+2020-06-23 12:21:37,011 INFO  reactivemongo.core.netty.Pack Instantiated reactivemongo.core.netty.Pack
+2020-06-23 12:21:37,398 INFO  http 200 GET / Lobby.home 568ms
+2020-06-23 12:23:33,846 INFO  http 200 GET / Lobby.home 59ms
+2020-06-23 12:23:37,207 INFO  http 200 GET /dasher?_=1592929413952 Dasher.get 31ms
+2020-06-23 12:23:37,836 INFO  http 200 GET /login?referrer=/ Auth.login 38ms
+2020-06-23 12:23:38,104 INFO  http 200 GET /dasher?_=1592929417891 Dasher.get 27ms
+2020-06-23 12:23:40,396 INFO  http 200 GET /signup Auth.signup 33ms
+2020-06-23 12:24:00,549 INFO  security MaxMindIpGeo is disabled: java.io.FileNotFoundException: data/GeoLite2-City.mmdb (No such file or directory)
+2020-06-23 12:24:00,745 INFO  auth username email@email.com fp: Some(FingerPrint(f19deb80a2850a53a45b71c4f6bd8abb)) mustConfirm: YesBecauseIpSusp fp: f19deb80a2850a53a45b71c4f6bd8abb api: 0
+2020-06-23 12:24:00,750 INFO  slack [signups] :musical_note: @lichess: <https://lichess.org/@/username?mod|username> EMAIL: <https://lichess.org/mod/search?q=email@email.com|email@email.com> IP: <https://lichess.org/mod/search?q=0:0:0:0:0:0:0:1|0:0:0:0:0:0:0:1> FP: <https://lichess.org/mod/print/8Z3rgKKF|8Z3rgKKF> *proxy*
+2020-06-23 12:24:00,804 INFO  security Message(EmailAddress(****),Welcome to lichess.org, username,
+You have successfully created your account on https://lichess.org.
+
+Here is your profile page: http://localhost:9663/@/username. You can personalize it on http://localhost:9663/account/profile.
+
+Have fun, and may your pieces always find their way to your opponent's king!
+
+
+This is a service email related to your use of https://lichess.org.
+
+To contact us, please use https://lichess.org/contact.
+,Some(<div itemscope="itemscope" itemtype="http://schema.org/EmailMessage"><p itemprop="description">You have successfully created your account on https://lichess.org.<br /><br />Here is your profile page: http://localhost:9663/@/username. You can personalize it on http://localhost:9663/account/profile.<br /><br />Have fun, and may your pieces always find their way to your opponent's king!</p><div itemprop="publisher" itemscope="itemscope" itemtype="http://schema.org/Organization"></div></div>),None,None,None,3) -> No mailgun API URL
+2020-06-23 12:24:00,873 INFO  http 303 POST /signup Auth.signupPost 487ms
+2020-06-23 12:24:01,914 INFO  http 200 GET /@/username User.show 1035ms
+2020-06-23 12:24:02,761 INFO  http 204 POST /auth/set-fp/f19deb80a2850a53a45b71c4f6bd8abb/116 Auth.setFingerPrint 111ms
+2020-06-23 12:24:03,706 INFO  http 200 GET /notify?page=1&_=1592929442007 Notify.recent 100ms
+2020-06-23 12:24:04,452 INFO  http 200 GET /dasher?_=1592929442008 Dasher.get 54ms
+2020-06-23 12:25:41,549 INFO  http 303 POST /logout Auth.logout 130ms
+2020-06-23 12:25:41,555 INFO  http 200 GET /login Auth.login 2ms
+2020-06-23 12:54:11,974 INFO  p.core.server.AkkaHttpServer Stopping Akka HTTP server...
+2020-06-23 12:54:12,018 INFO  p.core.server.AkkaHttpServer Terminating server binding for /[0:0:0:0:0:0:0:0]:9663
+2020-06-23 12:54:12,125 INFO  i.l.c.p.ConnectionWatchdog Reconnecting, last destination was /127.0.0.1:6379
+2020-06-23 12:54:12,125 INFO  i.l.c.p.ConnectionWatchdog Reconnecting, last destination was /127.0.0.1:6379
+2020-06-23 12:54:12,126 INFO  i.l.c.p.ConnectionWatchdog Reconnecting, last destination was /127.0.0.1:6379
+2020-06-23 12:54:12,126 INFO  i.l.c.p.ConnectionWatchdog Reconnecting, last destination was /127.0.0.1:6379
+2020-06-23 12:54:12,130 INFO  i.l.c.p.ConnectionWatchdog Reconnecting, last destination was /127.0.0.1:6379
+2020-06-23 12:54:12,130 INFO  i.l.c.p.ConnectionWatchdog Reconnecting, last destination was /127.0.0.1:6379
+2020-06-23 12:54:12,130 INFO  i.l.c.p.ConnectionWatchdog Reconnecting, last destination was /127.0.0.1:6379
+2020-06-23 12:54:12,131 INFO  i.l.c.p.ConnectionWatchdog Reconnecting, last destination was /127.0.0.1:6379
+2020-06-23 12:54:12,130 INFO  i.l.c.p.ConnectionWatchdog Reconnecting, last destination was /127.0.0.1:6379
+2020-06-23 12:54:12,136 INFO  i.l.c.p.ConnectionWatchdog Reconnecting, last destination was /127.0.0.1:6379
+2020-06-23 12:54:12,143 INFO  i.l.c.p.ConnectionWatchdog Reconnecting, last destination was /127.0.0.1:6379
+2020-06-23 12:54:12,144 INFO  i.l.c.p.ConnectionWatchdog Reconnecting, last destination was /127.0.0.1:6379
+2020-06-23 12:54:12,144 INFO  i.l.c.p.ConnectionWatchdog Reconnecting, last destination was /127.0.0.1:6379
+2020-06-23 12:54:12,154 INFO  i.l.c.p.ConnectionWatchdog Reconnecting, last destination was /127.0.0.1:6379
+2020-06-23 12:54:12,170 WARN  i.l.c.p.ConnectionWatchdog Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: /127.0.0.1:6379
+2020-06-23 12:54:12,171 WARN  i.l.c.p.ConnectionWatchdog Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: /127.0.0.1:6379
+2020-06-23 12:54:12,171 WARN  i.l.c.p.ConnectionWatchdog Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: /127.0.0.1:6379
+2020-06-23 12:54:12,171 WARN  i.l.c.p.ConnectionWatchdog Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: /127.0.0.1:6379
+2020-06-23 12:54:12,171 WARN  i.l.c.p.ConnectionWatchdog Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: /127.0.0.1:6379
+2020-06-23 12:54:12,173 WARN  i.l.c.p.ConnectionWatchdog Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: /127.0.0.1:6379
+2020-06-23 12:54:12,174 WARN  i.l.c.p.ConnectionWatchdog Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: /127.0.0.1:6379
+2020-06-23 12:54:12,174 WARN  i.l.c.p.ConnectionWatchdog Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: /127.0.0.1:6379
+2020-06-23 12:54:12,174 WARN  i.l.c.p.ConnectionWatchdog Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: /127.0.0.1:6379
+2020-06-23 12:54:12,175 WARN  i.l.c.p.ConnectionWatchdog Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: /127.0.0.1:6379
+2020-06-23 12:54:12,175 WARN  i.l.c.p.ConnectionWatchdog Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: /127.0.0.1:6379
+2020-06-23 12:54:12,176 WARN  i.l.c.p.ConnectionWatchdog Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: /127.0.0.1:6379
+2020-06-23 12:54:12,188 WARN  i.l.c.p.ConnectionWatchdog Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: /127.0.0.1:6379
+2020-06-23 12:54:12,188 WARN  i.l.c.p.ConnectionWatchdog Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: /127.0.0.1:6379

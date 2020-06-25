@@ -268,3 +268,47 @@ Caused by: reactivemongo.core.actors.Exceptions$InternalState:
 	at reactivemongo.IsMaster(true, 161, {{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=1313327197744ns, authenticated={}] }})(<time:1313328979521>)
 	at reactivemongo.ConnectAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=1313327197744ns, authenticated={}] }})(<time:1313327900180>)
 	at reactivemongo.RefreshAll({{NodeSet None Node[127.0.0.1:27017: Primary (10/10/10 available connections), latency=1310443ns, authenticated={}] }})(<time:1313327600839>)
+2020-06-17 13:46:00,874 [INFO] [Supervisor-1] Creating connection: main
+2020-06-17 13:46:00,919 [INFO] [Supervisor-1/main] Starting the MongoDBSystem
+2020-06-17 13:46:00,926 [INFO] Instantiated reactivemongo.core.netty.Pack
+2020-06-17 13:46:03,384 [INFO] [Supervisor-1] Creating connection: puzzle
+2020-06-17 13:46:03,386 [INFO] [Supervisor-1/puzzle] Starting the MongoDBSystem
+2020-06-17 13:46:03,387 [INFO] Instantiated reactivemongo.core.netty.Pack
+2020-06-17 13:48:38,707 [INFO] [Supervisor-1] Closing instance of ReactiveMongo driver
+2020-06-17 13:48:38,729 [INFO] [Supervisor-1/puzzle] Stopping the MongoDBSystem
+2020-06-17 13:48:38,729 [INFO] [Supervisor-1/main] Stopping the MongoDBSystem
+2020-06-17 13:48:38,730 [INFO] [Supervisor-1] Stopping the monitor...
+2020-06-23 12:07:11,252 [WARN] Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:07:11,252 [INFO] Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:08:42,234 [WARN] Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:08:42,235 [INFO] Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:09:54,333 [WARN] Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:09:54,333 [INFO] Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:10:40,929 [WARN] Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:10:40,929 [INFO] Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:10:40,943 [INFO] [Supervisor-4] Creating connection: main
+2020-06-23 12:10:41,006 [INFO] [Supervisor-4/main] Starting the MongoDBSystem
+2020-06-23 12:10:41,027 [INFO] Instantiated reactivemongo.core.netty.Pack
+2020-06-23 12:10:42,572 [WARN] Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:10:42,573 [INFO] Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:10:43,351 [WARN] Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:10:43,351 [INFO] Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:10:45,014 [INFO] [Supervisor-4] Creating connection: puzzle
+2020-06-23 12:10:45,015 [INFO] [Supervisor-4/puzzle] Starting the MongoDBSystem
+2020-06-23 12:10:45,016 [INFO] Instantiated reactivemongo.core.netty.Pack
+2020-06-23 12:21:34,979 [INFO] [Supervisor-4] Closing instance of ReactiveMongo driver
+2020-06-23 12:21:35,008 [INFO] [Supervisor-4/main] Stopping the MongoDBSystem
+2020-06-23 12:21:35,010 [INFO] [Supervisor-4/puzzle] Stopping the MongoDBSystem
+2020-06-23 12:21:35,011 [INFO] [Supervisor-4] Stopping the monitor...
+2020-06-23 12:21:35,302 [WARN] Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:21:35,302 [INFO] Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:21:35,309 [INFO] [Supervisor-5] Creating connection: main
+2020-06-23 12:21:35,310 [INFO] [Supervisor-5/main] Starting the MongoDBSystem
+2020-06-23 12:21:35,312 [INFO] Instantiated reactivemongo.core.netty.Pack
+2020-06-23 12:21:35,635 [WARN] Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:21:35,636 [INFO] Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:21:36,011 [WARN] Connection option 'authSource' deprecated: use option 'authenticationDatabase'
+2020-06-23 12:21:36,011 [INFO] Connection option 'replicaSet' is ignored: determined from servers response
+2020-06-23 12:21:37,010 [INFO] [Supervisor-5] Creating connection: puzzle
+2020-06-23 12:21:37,010 [INFO] [Supervisor-5/puzzle] Starting the MongoDBSystem
+2020-06-23 12:21:37,011 [INFO] Instantiated reactivemongo.core.netty.Pack
